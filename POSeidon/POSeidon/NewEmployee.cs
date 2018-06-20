@@ -27,5 +27,17 @@ namespace POSeidon
         {
             
         }
+
+        private void rdoSalary_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdoSalary.Checked == true)
+            {
+                lblPay.Text = "Weekly Salary";
+            }
+            else
+            {
+                lblPay.Text = "Hourly Rate";
+            }
+        }
     }
 }

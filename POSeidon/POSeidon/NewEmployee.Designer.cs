@@ -236,6 +236,7 @@
             this.rdoSalary.TabStop = true;
             this.rdoSalary.Text = "Weekly";
             this.rdoSalary.UseVisualStyleBackColor = true;
+            this.rdoSalary.CheckedChanged += new System.EventHandler(this.rdoSalary_CheckedChanged);
             // 
             // numericUpDown1
             // 

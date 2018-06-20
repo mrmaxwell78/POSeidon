@@ -33,8 +33,8 @@
             this.txtNewName = new System.Windows.Forms.TextBox();
             this.txtNewLastName = new System.Windows.Forms.TextBox();
             this.grpStatus = new System.Windows.Forms.GroupBox();
-            this.rdoManagerYes = new System.Windows.Forms.RadioButton();
             this.rdoManagerNo = new System.Windows.Forms.RadioButton();
+            this.rdoManagerYes = new System.Windows.Forms.RadioButton();
             this.grpTime = new System.Windows.Forms.GroupBox();
             this.rdoTimeNo = new System.Windows.Forms.RadioButton();
             this.rdoTimeYes = new System.Windows.Forms.RadioButton();
@@ -96,17 +96,6 @@
             this.grpStatus.TabStop = false;
             this.grpStatus.Text = "Manager?";
             // 
-            // rdoManagerYes
-            // 
-            this.rdoManagerYes.AutoSize = true;
-            this.rdoManagerYes.Location = new System.Drawing.Point(7, 21);
-            this.rdoManagerYes.Name = "rdoManagerYes";
-            this.rdoManagerYes.Size = new System.Drawing.Size(43, 17);
-            this.rdoManagerYes.TabIndex = 0;
-            this.rdoManagerYes.TabStop = true;
-            this.rdoManagerYes.Text = "Yes";
-            this.rdoManagerYes.UseVisualStyleBackColor = true;
-            // 
             // rdoManagerNo
             // 
             this.rdoManagerNo.AutoSize = true;
@@ -117,6 +106,17 @@
             this.rdoManagerNo.TabStop = true;
             this.rdoManagerNo.Text = "No";
             this.rdoManagerNo.UseVisualStyleBackColor = true;
+            // 
+            // rdoManagerYes
+            // 
+            this.rdoManagerYes.AutoSize = true;
+            this.rdoManagerYes.Location = new System.Drawing.Point(7, 21);
+            this.rdoManagerYes.Name = "rdoManagerYes";
+            this.rdoManagerYes.Size = new System.Drawing.Size(43, 17);
+            this.rdoManagerYes.TabIndex = 0;
+            this.rdoManagerYes.TabStop = true;
+            this.rdoManagerYes.Text = "Yes";
+            this.rdoManagerYes.UseVisualStyleBackColor = true;
             // 
             // grpTime
             // 
@@ -241,6 +241,11 @@
             // 
             this.numericUpDown1.DecimalPlaces = 2;
             this.numericUpDown1.Location = new System.Drawing.Point(241, 328);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            15000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 11;

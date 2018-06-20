@@ -103,10 +103,10 @@
             // 
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.0116F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.98839F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.8672F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.1328F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel1.Controls.Add(this.lblName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblFullTime, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblManager, 2, 0);
@@ -123,7 +123,7 @@
             // 
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(155, 3);
+            this.lblName.Location = new System.Drawing.Point(144, 3);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(100, 23);
             this.lblName.TabIndex = 0;
@@ -134,7 +134,7 @@
             // 
             this.lblFullTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFullTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullTime.Location = new System.Drawing.Point(413, 3);
+            this.lblFullTime.Location = new System.Drawing.Point(401, 3);
             this.lblFullTime.Name = "lblFullTime";
             this.lblFullTime.Size = new System.Drawing.Size(83, 23);
             this.lblFullTime.TabIndex = 1;
@@ -145,7 +145,7 @@
             // 
             this.lblManager.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblManager.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManager.Location = new System.Drawing.Point(504, 3);
+            this.lblManager.Location = new System.Drawing.Point(502, 3);
             this.lblManager.Name = "lblManager";
             this.lblManager.Size = new System.Drawing.Size(100, 23);
             this.lblManager.TabIndex = 2;
@@ -156,7 +156,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(615, 3);
+            this.label2.Location = new System.Drawing.Point(614, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 3;

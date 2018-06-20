@@ -9,19 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace POSeidon
-{ 
-    public partial class frmPOS : Form
+{
+    public partial class frmNewEmployee : Form
     {
-        public frmPOS()
+        public frmNewEmployee()
         {
             InitializeComponent();
         }
 
-        private void btnNewEmployee_Click(object sender, EventArgs e)
+ 
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmNewEmployee newEmp = new frmNewEmployee();
-            newEmp.Show();
-            
+            this.Close();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
 
         }
     }

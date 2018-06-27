@@ -25,40 +25,10 @@ namespace POSeidon
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if(txtNewName.Text == string.Empty)
+            if (isValidEntry())
             {
-                MessageBox.Show("Please enter a first name.");
-                return;
-            }
-
-            if(txtNewLastName.Text == string.Empty)
-            {
-                MessageBox.Show("Please enter a last name.");
-                return;
-            }
-
-            if(!rdoManagerYes.Checked && !rdoManagerNo.Checked)
-            {
-                MessageBox.Show("Please select if the new Employee is a manager or not.");
-                return;
-            }
-
-            if(!rdoTimeYes.Checked && !rdoTimeNo.Checked)
-            {
-                MessageBox.Show("Please indicate if they are full time or not.");
-                return;
-            }
-
-            if(!rdoSalesYes.Checked && !rdoSalesNo.Checked)
-            {
-                MessageBox.Show("Please indicate if they are a sales team member or not.");
-                return;
-            }
-
-            if(!rdoSalary.Checked && !rdoHourly.Checked)
-            {
-                MessageBox.Show("Please indicate if this person is paid hourly or a weekly salary.");
-                return;
+                MessageBox.Show("Data is saved.");
+                this.Close();
             }
         }
 
@@ -73,5 +43,63 @@ namespace POSeidon
                 lblPay.Text = "Hourly Rate";
             }
         }
+
+         private bool isValidEntry()
+        {
+                if (txtNewName.Text == string.Empty)
+                {
+                    MessageBox.Show("Please enter a first name.");
+                    return false;
+                }
+                
+                if(txtNewName.Text != string.Empty)
+                {
+                    char.ToUpper(txtNewName.Text[0]);
+
+                    for(int i = 0; i < txtNewName.Text.Length; i++)
+                    {
+                    if (char.IsDigit(txtNewName.Text[i]))
+                        {
+                            MessageBox.Show("Please no digits.");
+                            return false;
+                        }
+                        
+                    }
+                }
+
+                if (txtNewLastName.Text == string.Empty)
+                {
+                    MessageBox.Show("Please enter a last name.");
+                    return false;
+                }
+
+                if (!rdoManagerYes.Checked && !rdoManagerNo.Checked)
+                {
+                    MessageBox.Show("Please select if the new Employee is a manager or not.");
+                    return false;
+                }
+
+                if (!rdoTimeYes.Checked && !rdoTimeNo.Checked)
+                {
+                    MessageBox.Show("Please indicate if they are full time or not.");
+                    return false;
+                }
+
+                if (!rdoSalesYes.Checked && !rdoSalesNo.Checked)
+                {
+                    MessageBox.Show("Please indicate if they are a sales team member or not.");
+                    return false;
+                }
+
+                if (!rdoSalary.Checked && !rdoHourly.Checked)
+                {
+                    MessageBox.Show("Please indicate if this person is paid hourly or a weekly salary.");
+                    return false;
+                }
+
+                else
+                    return true;
+                  
+            }
+        }
     }
-}

@@ -28,8 +28,10 @@ namespace POSeidon
             if (isValidEntry())
             {
                 MessageBox.Show("Data is saved.");
-                this.Close();
+                //insert database commands here  
             }
+ 
+            this.Close();
         }
 
         private void rdoSalary_CheckedChanged(object sender, EventArgs e)

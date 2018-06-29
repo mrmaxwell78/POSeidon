@@ -75,6 +75,18 @@ namespace POSeidon
                     return false;
                 }
 
+                if(txtNewLastName.Text != string.Empty)
+                {
+                    for(int i = 0; i < txtNewLastName.Text.Length; i++)
+                    {
+                    if (char.IsDigit(txtNewLastName.Text[i]))
+                        {
+                            MessageBox.Show("Please no digits.");
+                            return false;
+                        }
+                    }
+                }
+
                 if (!rdoManagerYes.Checked && !rdoManagerNo.Checked)
                 {
                     MessageBox.Show("Please select if the new Employee is a manager or not.");

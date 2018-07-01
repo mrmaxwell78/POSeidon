@@ -118,7 +118,7 @@ namespace POSeidon
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDown1.Value.ToString().Length >= 4)
+            if (nudWage.Value.ToString().Length >= 4)
             {
                 MessageBox.Show("Please input in this format: XX.XX");
             }

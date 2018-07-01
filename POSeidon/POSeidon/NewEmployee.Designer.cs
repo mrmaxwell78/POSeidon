@@ -46,14 +46,14 @@
             this.grpSalary = new System.Windows.Forms.GroupBox();
             this.rdoHourly = new System.Windows.Forms.RadioButton();
             this.rdoSalary = new System.Windows.Forms.RadioButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudWage = new System.Windows.Forms.NumericUpDown();
             this.lblPay = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.grpStatus.SuspendLayout();
             this.grpTime.SuspendLayout();
             this.grpSales.SuspendLayout();
             this.grpSalary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNewName
@@ -239,19 +239,19 @@
             this.rdoSalary.UseVisualStyleBackColor = true;
             this.rdoSalary.CheckedChanged += new System.EventHandler(this.rdoSalary_CheckedChanged);
             // 
-            // numericUpDown1
+            // nudWage
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(241, 328);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudWage.DecimalPlaces = 2;
+            this.nudWage.Location = new System.Drawing.Point(241, 328);
+            this.nudWage.Maximum = new decimal(new int[] {
             15000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.nudWage.Name = "nudWage";
+            this.nudWage.Size = new System.Drawing.Size(120, 20);
+            this.nudWage.TabIndex = 11;
+            this.nudWage.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // lblPay
             // 
@@ -275,7 +275,7 @@
             this.ClientSize = new System.Drawing.Size(444, 465);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblPay);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudWage);
             this.Controls.Add(this.grpSalary);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
@@ -297,7 +297,7 @@
             this.grpSales.PerformLayout();
             this.grpSalary.ResumeLayout(false);
             this.grpSalary.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,7 +323,7 @@
         private System.Windows.Forms.GroupBox grpSalary;
         private System.Windows.Forms.RadioButton rdoHourly;
         private System.Windows.Forms.RadioButton rdoSalary;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudWage;
         private System.Windows.Forms.Label lblPay;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }

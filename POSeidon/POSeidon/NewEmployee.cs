@@ -28,14 +28,14 @@ namespace POSeidon
             if (isValidEntry())
             {
                 MessageBox.Show("Data is saved.");
-                //insert database commands here  
+                //insert database commands here to load data to the database.
             }
  
             this.Close();
         }
 
         private void rdoSalary_CheckedChanged(object sender, EventArgs e)
-        {
+        {//check to see which radio button is clicked and update the label accordingly
             if(rdoSalary.Checked == true)
             {
                 lblPay.Text = "Weekly Salary";
@@ -46,21 +46,21 @@ namespace POSeidon
             }
         }
 
-         private bool isValidEntry()
+         private bool isValidEntry()//method to determine if all of the user input is valid
         {
-                if (txtNewName.Text == string.Empty)
+                if (txtNewName.Text == string.Empty)//check to see if the textbox is empty
                 {
                     MessageBox.Show("Please enter a first name.");
                     return false;
                 }
                 
-                if(txtNewName.Text != string.Empty)
+                if(txtNewName.Text != string.Empty)//check to see if the textbox is not empty
                 {
-                    char.ToUpper(txtNewName.Text[0]);
+                    char.ToUpper(txtNewName.Text[0]);//if not empty, upper case the first char
 
-                    for(int i = 0; i < txtNewName.Text.Length; i++)
+                    for(int i = 0; i < txtNewName.Text.Length; i++)//itterate through the string and determine the chars are all letters
                     {
-                    if (char.IsDigit(txtNewName.Text[i]))
+                    if (char.IsDigit(txtNewName.Text[i]))//if char is a digit, show message
                         {
                             MessageBox.Show("Please no digits.");
                             return false;
@@ -69,17 +69,17 @@ namespace POSeidon
                     }
                 }
 
-                if (txtNewLastName.Text == string.Empty)
+                if (txtNewLastName.Text == string.Empty)//check to see if the textbox is empty
                 {
                     MessageBox.Show("Please enter a last name.");
                     return false;
                 }
 
                 if(txtNewLastName.Text != string.Empty)
-                {
-                    for(int i = 0; i < txtNewLastName.Text.Length; i++)
+                { //itterate through the string and determine the chars are all letters
+                for (int i = 0; i < txtNewLastName.Text.Length; i++)
                     {
-                    if (char.IsDigit(txtNewLastName.Text[i]))
+                    if (char.IsDigit(txtNewLastName.Text[i]))//if char is a digit show message
                         {
                             MessageBox.Show("Please no digits.");
                             return false;
@@ -87,33 +87,41 @@ namespace POSeidon
                     }
                 }
 
-                if (!rdoManagerYes.Checked && !rdoManagerNo.Checked)
+                if (!rdoManagerYes.Checked && !rdoManagerNo.Checked)//check that one radio buttons is checked
                 {
                     MessageBox.Show("Please select if the new Employee is a manager or not.");
                     return false;
                 }
 
-                if (!rdoTimeYes.Checked && !rdoTimeNo.Checked)
+                if (!rdoTimeYes.Checked && !rdoTimeNo.Checked)//check that one radio button is checked
                 {
                     MessageBox.Show("Please indicate if they are full time or not.");
                     return false;
                 }
 
-                if (!rdoSalesYes.Checked && !rdoSalesNo.Checked)
+                if (!rdoSalesYes.Checked && !rdoSalesNo.Checked)//check that one radio button is checked
                 {
                     MessageBox.Show("Please indicate if they are a sales team member or not.");
                     return false;
                 }
 
-                if (!rdoSalary.Checked && !rdoHourly.Checked)
+                if (!rdoSalary.Checked && !rdoHourly.Checked)//check that one radio button is checked
                 {
                     MessageBox.Show("Please indicate if this person is paid hourly or a weekly salary.");
                     return false;
                 }
 
-                else
+                else//if this all passes, return true and proceed
                     return true;
                   
             }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value.ToString().Length >= 4)
+            {
+                MessageBox.Show("Please input in this format: XX.XX");
+            }
         }
+    }
     }

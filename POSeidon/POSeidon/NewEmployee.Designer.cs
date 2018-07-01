@@ -48,6 +48,7 @@
             this.rdoSalary = new System.Windows.Forms.RadioButton();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lblPay = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.grpStatus.SuspendLayout();
             this.grpTime.SuspendLayout();
             this.grpSales.SuspendLayout();
@@ -250,6 +251,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 11;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // lblPay
             // 
@@ -259,11 +261,19 @@
             this.lblPay.TabIndex = 12;
             this.lblPay.Text = "Wages";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(134, 59);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
+            this.flowLayoutPanel1.TabIndex = 13;
+            // 
             // frmNewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 465);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblPay);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.grpSalary);
@@ -315,5 +325,6 @@
         private System.Windows.Forms.RadioButton rdoSalary;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label lblPay;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -8,3 +8,15 @@ C:\Users\Matt\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.csproj.Gener
 C:\Users\Matt\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.csproj.CoreCompileInputs.cache
 C:\Users\Matt\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.exe
 C:\Users\Matt\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.pdb
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\bin\Debug\POSeidon.exe.config
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\bin\Debug\POSeidon.exe
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\bin\Debug\POSeidon.pdb
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.frmPOS.resources
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.Properties.Resources.resources
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.csproj.GenerateResource.Cache
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.exe
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.pdb
+C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.frmNewEmployee.resources
+C:\Users\Matt\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.frmNewEmployee.resources

@@ -68,12 +68,41 @@ namespace POSeidon
 
 
 
+      
+
         private void chkEmp1Time_CheckedChanged(object sender, EventArgs e)
         {
             if (chkEmp1Time.Checked)
                 chkEmp1Time.Text = "Yes";
             else
                 chkEmp1Time.Text = "No";
+        }
+
+        private void tabPanel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabPanel.SelectedTab == tabPage4)
+            {
+                LoadCustomers();
+                SaveCustomers();
+            }
+        }
+
+        private void LoadCustomers()
+        {
+            
+        }
+
+        private void SaveCustomers()
+        {
+            try
+            {
+                FileStream outfile = new FileStream("Customers.txt", FileMode.Append);
+
+                StreamWriter myWriter = new StreamWriter(outfile);
+
+
+            }
+            catch (FileNotFoundException) { }
         }
     }
 }

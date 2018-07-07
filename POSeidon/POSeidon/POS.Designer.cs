@@ -32,12 +32,12 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
+            this.col1FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col2LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col3Adr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col4Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col5Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,7 +55,7 @@
             this.tabPanel = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlEmp1Man.SuspendLayout();
@@ -75,7 +75,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Controls.Add(this.dgvCustomer);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -84,46 +84,47 @@
             this.tabPage4.Text = "Customer List";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvCustomer
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(763, 447);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
+            this.dgvCustomer.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col1FirstName,
+            this.col2LastName,
+            this.col3Adr,
+            this.col4Phone,
+            this.col5Email});
+            this.dgvCustomer.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvCustomer.Location = new System.Drawing.Point(6, 6);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.Size = new System.Drawing.Size(763, 447);
+            this.dgvCustomer.TabIndex = 0;
             // 
-            // Column1
+            // col1FirstName
             // 
-            this.Column1.HeaderText = "First Name";
-            this.Column1.Name = "Column1";
+            this.col1FirstName.HeaderText = "First Name";
+            this.col1FirstName.Name = "col1FirstName";
             // 
-            // Column2
+            // col2LastName
             // 
-            this.Column2.HeaderText = "Last Name";
-            this.Column2.Name = "Column2";
+            this.col2LastName.HeaderText = "Last Name";
+            this.col2LastName.Name = "col2LastName";
             // 
-            // Column3
+            // col3Adr
             // 
-            this.Column3.HeaderText = "Address";
-            this.Column3.Name = "Column3";
+            this.col3Adr.HeaderText = "Address";
+            this.col3Adr.Name = "col3Adr";
             // 
-            // Column4
+            // col4Phone
             // 
-            this.Column4.HeaderText = "Phone";
-            this.Column4.Name = "Column4";
+            this.col4Phone.HeaderText = "Phone";
+            this.col4Phone.Name = "col4Phone";
             // 
-            // Column5
+            // col5Email
             // 
-            this.Column5.HeaderText = "Email";
-            this.Column5.Name = "Column5";
+            this.col5Email.HeaderText = "Email";
+            this.col5Email.Name = "col5Email";
             // 
             // tabPage3
             // 
@@ -154,7 +155,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.8672F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.1328F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.Controls.Add(this.lblName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblFullTime, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblManager, 2, 0);
@@ -176,7 +177,7 @@
             // 
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(154, 19);
+            this.lblName.Location = new System.Drawing.Point(153, 19);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(100, 23);
             this.lblName.TabIndex = 0;
@@ -187,7 +188,7 @@
             // 
             this.lblFullTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFullTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullTime.Location = new System.Drawing.Point(425, 19);
+            this.lblFullTime.Location = new System.Drawing.Point(421, 19);
             this.lblFullTime.Name = "lblFullTime";
             this.lblFullTime.Size = new System.Drawing.Size(83, 23);
             this.lblFullTime.TabIndex = 1;
@@ -198,7 +199,7 @@
             // 
             this.lblManager.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblManager.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManager.Location = new System.Drawing.Point(529, 19);
+            this.lblManager.Location = new System.Drawing.Point(525, 19);
             this.lblManager.Name = "lblManager";
             this.lblManager.Size = new System.Drawing.Size(100, 23);
             this.lblManager.TabIndex = 2;
@@ -209,7 +210,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(648, 19);
+            this.label2.Location = new System.Drawing.Point(646, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 3;
@@ -219,7 +220,7 @@
             // lblEmp1
             // 
             this.lblEmp1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEmp1.Location = new System.Drawing.Point(154, 77);
+            this.lblEmp1.Location = new System.Drawing.Point(153, 77);
             this.lblEmp1.Name = "lblEmp1";
             this.lblEmp1.Size = new System.Drawing.Size(100, 23);
             this.lblEmp1.TabIndex = 4;
@@ -230,7 +231,7 @@
             // 
             this.chkEmp1Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkEmp1Time.AutoSize = true;
-            this.chkEmp1Time.Location = new System.Drawing.Point(446, 80);
+            this.chkEmp1Time.Location = new System.Drawing.Point(443, 80);
             this.chkEmp1Time.Name = "chkEmp1Time";
             this.chkEmp1Time.Size = new System.Drawing.Size(40, 17);
             this.chkEmp1Time.TabIndex = 7;
@@ -241,7 +242,7 @@
             // pnlEmp1Man
             // 
             this.pnlEmp1Man.Controls.Add(this.rdoEmp1Manager);
-            this.pnlEmp1Man.Location = new System.Drawing.Point(528, 64);
+            this.pnlEmp1Man.Location = new System.Drawing.Point(524, 64);
             this.pnlEmp1Man.Name = "pnlEmp1Man";
             this.pnlEmp1Man.Size = new System.Drawing.Size(103, 49);
             this.pnlEmp1Man.TabIndex = 9;
@@ -261,7 +262,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.rdoEmp1Sales);
-            this.panel2.Location = new System.Drawing.Point(638, 64);
+            this.panel2.Location = new System.Drawing.Point(634, 64);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(111, 49);
             this.panel2.TabIndex = 10;
@@ -323,7 +324,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POSeidon Point Of Sale";
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -356,12 +357,12 @@
         private System.Windows.Forms.RadioButton rdoEmp1Manager;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton rdoEmp1Sales;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridView dgvCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col1FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col2LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col3Adr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col4Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col5Email;
     }
 }
 

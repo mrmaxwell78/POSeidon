@@ -15,6 +15,7 @@ namespace POSeidon
     {
         //Employee EmpList = new Employee();
         List<Employee> myEmpList = new List<Employee>();
+        Customer myCustomer = new Customer();
 
         public frmPOS()
         {
@@ -100,7 +101,7 @@ namespace POSeidon
 
                 StreamWriter myWriter = new StreamWriter(outfile);
 
-
+              
             }
             catch (FileNotFoundException) { }
         }

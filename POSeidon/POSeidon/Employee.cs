@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POSeidon
 {
-    class Employee
+    public class Employee
     {
         //privates
         private string firstName, lastName;

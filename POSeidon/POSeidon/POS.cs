@@ -26,6 +26,7 @@ namespace POSeidon
         {
             frmNewEmployee newEmp = new frmNewEmployee();
             newEmp.Show();
+            
 
             try
             {
@@ -68,7 +69,17 @@ namespace POSeidon
         }
 
 
-
+        public void LoadEmployees(List<Employee> employees)//I'm not sure if this will work, testing to see if it will
+        {
+            myEmpList = employees.ToList();
+            foreach (Employee tempEmp in myEmpList)
+            {/*Need to figure out a way to update lbls via a foreach loop
+                lblEmp1.Text = myEmpList[0].FirstName;
+                chkEmp1Time.Checked = Convert.ToBoolean(myEmpList[0].EmpFullTime);
+                rdoEmp1Manager.Checked = Convert.ToBoolean(myEmpList[0].EmpManager);
+                rdoEmp1Sales.Checked = Convert.ToBoolean(myEmpList[0].EmpSales);*/
+            }
+        }
       
 
         private void chkEmp1Time_CheckedChanged(object sender, EventArgs e)
@@ -82,7 +93,7 @@ namespace POSeidon
         private void tabPanel_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabPanel.SelectedTab == tabPage4)
-            {
+            {//this is probably unneeded once Databases are working
                 LoadCustomers();
                 SaveCustomers();
             }
@@ -90,20 +101,12 @@ namespace POSeidon
 
         private void LoadCustomers()
         {
-            
+            //this is probably unneeded once Databases are working
         }
 
         private void SaveCustomers()
         {
-            try
-            {
-                FileStream outfile = new FileStream("Customers.txt", FileMode.Append);
-
-                StreamWriter myWriter = new StreamWriter(outfile);
-
-              
-            }
-            catch (FileNotFoundException) { }
+            //this is probably unneeded once Databases are working
         }
     }
 }

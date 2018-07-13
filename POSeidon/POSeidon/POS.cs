@@ -19,8 +19,30 @@ namespace POSeidon
 
         public frmPOS()
         {
+            //frmLogin frmlog = new frmLogin();
+            //frmlog.Show();
+            //this.Opacity = 0;//to hide the POS
             InitializeComponent();
         }
+
+        /*This is for frmlog
+         * private void btlogin_Click(object sender, EventArgs e)
+            {
+                bool login = false;
+
+                //try your login here 
+               //and then when it success update login variable as true
+
+        if(login == true){
+
+            this.Close(); //close the frmlog
+            frmPOS.ActiveForm.Opacity = 100; // show the form
+
+        }else{
+              //inform user about failed login
+        }
+}
+         */
 
         private void btnNewEmployee_Click(object sender, EventArgs e)
         {

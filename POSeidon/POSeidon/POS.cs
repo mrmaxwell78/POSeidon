@@ -27,7 +27,7 @@ namespace POSeidon
             frmNewEmployee newEmp = new frmNewEmployee();
             newEmp.Show();
             
-
+            /*
             try
             {
                 FileStream inFile = new FileStream("Employees.txt", FileMode.Open);
@@ -65,7 +65,7 @@ namespace POSeidon
                 inFile.Close();
 
             }
-            catch (FileNotFoundException) { }
+            catch (FileNotFoundException) { } */ //this was experimenting to see if reading would work
         }
 
 

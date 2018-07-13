@@ -70,7 +70,7 @@ namespace POSeidon
 
 
         public void LoadEmployees(List<Employee> employees)//I'm not sure if this will work, testing to see if it will
-        {
+        {//This is probably also unneeded once databases are working
             myEmpList = employees.ToList();
             foreach (Employee tempEmp in myEmpList)
             {/*Need to figure out a way to update lbls via a foreach loop
@@ -107,6 +107,11 @@ namespace POSeidon
         private void SaveCustomers()
         {
             //this is probably unneeded once Databases are working
+        }
+
+        private void btnLoyalty_Click(object sender, EventArgs e)
+        {//Anything else related to loyalty can go here in the information
+            MessageBox.Show("Loyalty Information:\n" + "Free shipping\n" + "10% Off\n" + "Exclusive offers in store\n");
         }
     }
 }

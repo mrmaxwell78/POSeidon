@@ -67,6 +67,8 @@
             this.btnNewEmployee = new System.Windows.Forms.Button();
             this.tabPanel = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnLoyalty = new System.Windows.Forms.Button();
+            this.btnRemoveCustomer = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -92,6 +94,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnRemoveCustomer);
+            this.tabPage4.Controls.Add(this.btnLoyalty);
             this.tabPage4.Controls.Add(this.dgvCustomer);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -470,6 +474,25 @@
             this.tabPage1.Text = "Sales History";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnLoyalty
+            // 
+            this.btnLoyalty.Location = new System.Drawing.Point(466, 479);
+            this.btnLoyalty.Name = "btnLoyalty";
+            this.btnLoyalty.Size = new System.Drawing.Size(131, 54);
+            this.btnLoyalty.TabIndex = 1;
+            this.btnLoyalty.Text = "Loyalty Information";
+            this.btnLoyalty.UseVisualStyleBackColor = true;
+            this.btnLoyalty.Click += new System.EventHandler(this.btnLoyalty_Click);
+            // 
+            // btnRemoveCustomer
+            // 
+            this.btnRemoveCustomer.Location = new System.Drawing.Point(282, 479);
+            this.btnRemoveCustomer.Name = "btnRemoveCustomer";
+            this.btnRemoveCustomer.Size = new System.Drawing.Size(131, 54);
+            this.btnRemoveCustomer.TabIndex = 2;
+            this.btnRemoveCustomer.Text = "Remove Customer";
+            this.btnRemoveCustomer.UseVisualStyleBackColor = true;
+            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,6 +563,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rdoEmp2Manager;
         private System.Windows.Forms.DataGridViewTextBoxColumn col6;
+        private System.Windows.Forms.Button btnLoyalty;
+        private System.Windows.Forms.Button btnRemoveCustomer;
     }
 }
 

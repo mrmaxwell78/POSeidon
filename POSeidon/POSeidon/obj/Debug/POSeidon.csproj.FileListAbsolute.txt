@@ -20,3 +20,4 @@ C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.exe
 C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.pdb
 C:\Users\student\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.frmNewEmployee.resources
 C:\Users\Matt\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.frmNewEmployee.resources
+C:\Users\Matt\Desktop\POSeidon\POSeidon\POSeidon\obj\Debug\POSeidon.frmLog.resources

@@ -19,9 +19,9 @@ namespace POSeidon
 
         public frmPOS()
         {
-            //frmLogin frmlog = new frmLogin();
-            //frmlog.Show();
-            //this.Opacity = 0;//to hide the POS
+            frmLog frmlogin = new frmLog();
+            frmlogin.Show();
+            this.Opacity = 0;//to hide the POS
             InitializeComponent();
         }
 

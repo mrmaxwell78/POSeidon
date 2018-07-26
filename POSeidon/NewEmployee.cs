@@ -13,9 +13,8 @@ namespace POSeidon
 {
     public partial class frmNewEmployee : Form
     {
-        Employee myEmployee = new Employee();
+        DataAccess data = new DataAccess();
 
-        List<Employee> empList = new List<Employee>();
 
         public frmNewEmployee()
         {
@@ -39,23 +38,23 @@ namespace POSeidon
                     //StreamWriter is the one that actually writes to the file
                     StreamWriter fileWriter = new StreamWriter(outfile);
                     //get data from form
-                    myEmployee.FirstName = txtNewName.Text;
-                    myEmployee.LastName = txtNewLastName.Text;
-                    myEmployee.EmpManager = ManagerStatus();
-                    myEmployee.EmpFullTime = TimeStatus();
-                    myEmployee.EmpSales = SalesStatus();
-                    myEmployee.EmpPay = PaymentStatus();
-                    myEmployee.Wages = Convert.ToDouble(nudWage.Value);
-                    myEmployee.UserName = txtUserName.Text;
-                    myEmployee.Password = txtPassword.Text;
+                    data.tempEmp.FirstName = txtNewName.Text;
+                    data.tempEmp.LastName = txtNewLastName.Text;
+                    data.tempEmp.EmpManager = ManagerStatus();
+                    data.tempEmp.EmpFullTime = TimeStatus();
+                    data.tempEmp.EmpSales = SalesStatus();
+                    data.tempEmp.EmpPay = PaymentStatus();
+                    data.tempEmp.Wages = Convert.ToDouble(nudWage.Value);
+                    data.tempEmp.UserName = txtUserName.Text;
+                    data.tempEmp.Password = txtPassword.Text;
 
-                    fileWriter.WriteLine(myEmployee.FirstName + ", " + myEmployee.LastName + ", "
-                        + myEmployee.EmpManager + ", " + myEmployee.EmpFullTime + ", " + myEmployee.EmpSales +
-                        ", " + myEmployee.EmpPay + ", " + myEmployee.Wages + ", " + myEmployee.UserName + ", " + myEmployee.Password);
+                    fileWriter.WriteLine(data.tempEmp.FirstName + ", " + data.tempEmp.LastName + ", "
+                        + data.tempEmp.EmpManager + ", " + data.tempEmp.EmpFullTime + ", " + data.tempEmp.EmpSales +
+                        ", " + data.tempEmp.EmpPay + ", " + data.tempEmp.Wages + ", " + data.tempEmp.UserName + ", " + data.tempEmp.Password);
 
                     MessageBox.Show("Saved");
 
-                    empList.Add(myEmployee);
+                    data.empList.Add(data.tempEmp);
 
                     fileWriter.Close();
                     outfile.Close();

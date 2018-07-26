@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="DataAccess.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="frmLog.cs">
       <SubType>Form</SubType>

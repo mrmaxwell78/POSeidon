@@ -48,6 +48,10 @@
             this.rdoSalary = new System.Windows.Forms.RadioButton();
             this.nudWage = new System.Windows.Forms.NumericUpDown();
             this.lblPay = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.grpStatus.SuspendLayout();
             this.grpTime.SuspendLayout();
             this.grpSales.SuspendLayout();
@@ -261,6 +265,39 @@
             this.lblPay.TabIndex = 12;
             this.lblPay.Text = "Wages";
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(261, 174);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.TabIndex = 20;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(258, 142);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(84, 13);
+            this.lblPassword.TabIndex = 19;
+            this.lblPassword.Text = "Enter Password:";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(258, 94);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtUserName.TabIndex = 18;
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(255, 59);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(86, 13);
+            this.lblUserName.TabIndex = 17;
+            this.lblUserName.Text = "Enter Username:";
+            // 
             // frmNewEmployee
             // 
             this.AcceptButton = this.btnConfirm;
@@ -268,6 +305,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(444, 465);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblPay);
             this.Controls.Add(this.nudWage);
             this.Controls.Add(this.grpSalary);
@@ -319,5 +360,9 @@
         private System.Windows.Forms.RadioButton rdoSalary;
         private System.Windows.Forms.NumericUpDown nudWage;
         private System.Windows.Forms.Label lblPay;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label lblUserName;
     }
 }

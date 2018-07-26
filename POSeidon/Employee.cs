@@ -9,7 +9,7 @@ namespace POSeidon
     public class Employee
     {
         //privates
-        private string firstName, lastName;
+        private string firstName, lastName, userName, password;
         private double wages;
         private bool empManager, empFullTime, empSales, empPay;
 
@@ -40,7 +40,8 @@ namespace POSeidon
         public bool EmpFullTime { get => empFullTime; set => empFullTime = value; }
         public bool EmpSales { get => empSales; set => empSales = value; }
         public bool EmpPay { get => empPay; set => empPay = value; }
-
+        public string UserName { get => userName; set => userName = value; }
+        public string Password { get => password; set => password = value; }
     }
 }
 

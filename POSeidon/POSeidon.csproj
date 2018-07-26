@@ -75,6 +75,7 @@
     <Compile Include="NewEmployee.Designer.cs">
       <DependentUpon>NewEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
     <Compile Include="POS.cs">
       <SubType>Form</SubType>
     </Compile>

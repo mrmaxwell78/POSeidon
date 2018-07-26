@@ -61,8 +61,7 @@ namespace POSeidon
         {
             if (tabPanel.SelectedTab == tabPage4)
             {//this is probably unneeded once Databases are working
-                LoadCustomers();
-                SaveCustomers();
+                
             }
 
             if(tabPanel.SelectedTab == tabPage2)
@@ -100,6 +99,21 @@ namespace POSeidon
 
                         line = sReader.ReadLine();
                     }
+
+                    lblEmp1.Text = tempEmp.FirstName + " " + tempEmp.LastName;
+                    if (tempEmp.EmpFullTime == true)
+                    {
+                        chkEmp1Time.Checked = true;
+                    }
+                    if (tempEmp.EmpManager == true)
+                    {
+                        rdoEmp1Manager.Checked = true;
+                    }
+                    if (tempEmp.EmpSales == true)
+                    {
+                        rdoEmp1Sales.Checked = true;
+                    }
+                    
                     sReader.Close();
                     inFile.Close();
 
@@ -122,6 +136,11 @@ namespace POSeidon
         private void btnLoyalty_Click(object sender, EventArgs e)
         {//Anything else related to loyalty can go here in the information
             MessageBox.Show("Loyalty Information:\n" + "Free shipping\n" + "10% Off\n" + "Exclusive offers in store\n");
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace POSeidon
 {
-    class Customer
+    class Customer:Person
     {
-        private string FirstName, LastName, Address, Phone, Email;
+        private string  Address, Phone, Email;
         private bool loyal;
 
         public Customer()
@@ -27,8 +27,7 @@ namespace POSeidon
             loyal = loy;
         }
 
-        public string FirstName1 { get => FirstName; set => FirstName = value; }
-        public string LastName1 { get => LastName; set => LastName = value; }
+       
         public string Address1 { get => Address; set => Address = value; }
         public string Phone1 { get => Phone; set => Phone = value; }
         public string Email1 { get => Email; set => Email = value; }

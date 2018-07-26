@@ -32,13 +32,9 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnRemoveCustomer = new System.Windows.Forms.Button();
+            this.btnLoyalty = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.col1FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col2LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col3Adr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col4Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col5Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tlpEmployee = new System.Windows.Forms.TableLayoutPanel();
@@ -67,8 +63,15 @@
             this.btnNewEmployee = new System.Windows.Forms.Button();
             this.tabPanel = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnLoyalty = new System.Windows.Forms.Button();
-            this.btnRemoveCustomer = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.col1FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col2LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col3Adr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col4Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col5Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -80,6 +83,7 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPanel.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage5
@@ -105,6 +109,25 @@
             this.tabPage4.Text = "Customer List";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnRemoveCustomer
+            // 
+            this.btnRemoveCustomer.Location = new System.Drawing.Point(282, 479);
+            this.btnRemoveCustomer.Name = "btnRemoveCustomer";
+            this.btnRemoveCustomer.Size = new System.Drawing.Size(131, 54);
+            this.btnRemoveCustomer.TabIndex = 2;
+            this.btnRemoveCustomer.Text = "Remove Customer";
+            this.btnRemoveCustomer.UseVisualStyleBackColor = true;
+            // 
+            // btnLoyalty
+            // 
+            this.btnLoyalty.Location = new System.Drawing.Point(466, 479);
+            this.btnLoyalty.Name = "btnLoyalty";
+            this.btnLoyalty.Size = new System.Drawing.Size(131, 54);
+            this.btnLoyalty.TabIndex = 1;
+            this.btnLoyalty.Text = "Loyalty Information";
+            this.btnLoyalty.UseVisualStyleBackColor = true;
+            this.btnLoyalty.Click += new System.EventHandler(this.btnLoyalty_Click);
+            // 
             // dgvCustomer
             // 
             this.dgvCustomer.AllowUserToDeleteRows = false;
@@ -122,36 +145,6 @@
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(763, 447);
             this.dgvCustomer.TabIndex = 0;
-            // 
-            // col1FirstName
-            // 
-            this.col1FirstName.HeaderText = "First Name";
-            this.col1FirstName.Name = "col1FirstName";
-            // 
-            // col2LastName
-            // 
-            this.col2LastName.HeaderText = "Last Name";
-            this.col2LastName.Name = "col2LastName";
-            // 
-            // col3Adr
-            // 
-            this.col3Adr.HeaderText = "Address";
-            this.col3Adr.Name = "col3Adr";
-            // 
-            // col4Phone
-            // 
-            this.col4Phone.HeaderText = "Phone";
-            this.col4Phone.Name = "col4Phone";
-            // 
-            // col5Email
-            // 
-            this.col5Email.HeaderText = "Email";
-            this.col5Email.Name = "col5Email";
-            // 
-            // col6
-            // 
-            this.col6.HeaderText = "Loyalty Member";
-            this.col6.Name = "col6";
             // 
             // tabPage3
             // 
@@ -182,7 +175,7 @@
             this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.8672F));
             this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.1328F));
             this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
+            this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tlpEmployee.Controls.Add(this.chkEmp3Time, 1, 3);
             this.tlpEmployee.Controls.Add(this.panel4, 2, 3);
             this.tlpEmployee.Controls.Add(this.panel5, 3, 3);
@@ -215,7 +208,7 @@
             // 
             this.chkEmp3Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkEmp3Time.AutoSize = true;
-            this.chkEmp3Time.Location = new System.Drawing.Point(437, 195);
+            this.chkEmp3Time.Location = new System.Drawing.Point(435, 195);
             this.chkEmp3Time.Name = "chkEmp3Time";
             this.chkEmp3Time.Size = new System.Drawing.Size(40, 17);
             this.chkEmp3Time.TabIndex = 16;
@@ -225,7 +218,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.rdoEmp3Manager);
-            this.panel4.Location = new System.Drawing.Point(518, 180);
+            this.panel4.Location = new System.Drawing.Point(516, 180);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(103, 47);
             this.panel4.TabIndex = 17;
@@ -245,7 +238,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.rdoEmp3Sales);
-            this.panel5.Location = new System.Drawing.Point(628, 180);
+            this.panel5.Location = new System.Drawing.Point(626, 180);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(111, 47);
             this.panel5.TabIndex = 18;
@@ -265,7 +258,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Location = new System.Drawing.Point(150, 192);
+            this.label1.Location = new System.Drawing.Point(149, 192);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 15;
@@ -276,7 +269,7 @@
             // 
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(150, 23);
+            this.lblName.Location = new System.Drawing.Point(149, 23);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(100, 23);
             this.lblName.TabIndex = 0;
@@ -287,7 +280,7 @@
             // 
             this.lblFullTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFullTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullTime.Location = new System.Drawing.Point(416, 23);
+            this.lblFullTime.Location = new System.Drawing.Point(414, 23);
             this.lblFullTime.Name = "lblFullTime";
             this.lblFullTime.Size = new System.Drawing.Size(83, 23);
             this.lblFullTime.TabIndex = 1;
@@ -298,7 +291,7 @@
             // 
             this.lblManager.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblManager.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManager.Location = new System.Drawing.Point(519, 23);
+            this.lblManager.Location = new System.Drawing.Point(517, 23);
             this.lblManager.Name = "lblManager";
             this.lblManager.Size = new System.Drawing.Size(100, 23);
             this.lblManager.TabIndex = 2;
@@ -309,7 +302,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(643, 23);
+            this.label2.Location = new System.Drawing.Point(642, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 3;
@@ -319,7 +312,7 @@
             // lblEmp1
             // 
             this.lblEmp1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEmp1.Location = new System.Drawing.Point(150, 84);
+            this.lblEmp1.Location = new System.Drawing.Point(149, 84);
             this.lblEmp1.Name = "lblEmp1";
             this.lblEmp1.Size = new System.Drawing.Size(100, 23);
             this.lblEmp1.TabIndex = 4;
@@ -330,7 +323,7 @@
             // 
             this.chkEmp1Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkEmp1Time.AutoSize = true;
-            this.chkEmp1Time.Location = new System.Drawing.Point(437, 87);
+            this.chkEmp1Time.Location = new System.Drawing.Point(435, 87);
             this.chkEmp1Time.Name = "chkEmp1Time";
             this.chkEmp1Time.Size = new System.Drawing.Size(40, 17);
             this.chkEmp1Time.TabIndex = 7;
@@ -341,7 +334,7 @@
             // pnlEmp1Man
             // 
             this.pnlEmp1Man.Controls.Add(this.rdoEmp1Manager);
-            this.pnlEmp1Man.Location = new System.Drawing.Point(518, 72);
+            this.pnlEmp1Man.Location = new System.Drawing.Point(516, 72);
             this.pnlEmp1Man.Name = "pnlEmp1Man";
             this.pnlEmp1Man.Size = new System.Drawing.Size(103, 47);
             this.pnlEmp1Man.TabIndex = 9;
@@ -361,7 +354,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.rdoEmp1Sales);
-            this.panel2.Location = new System.Drawing.Point(628, 72);
+            this.panel2.Location = new System.Drawing.Point(626, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(111, 47);
             this.panel2.TabIndex = 10;
@@ -381,7 +374,7 @@
             // lblEmp2
             // 
             this.lblEmp2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEmp2.Location = new System.Drawing.Point(150, 138);
+            this.lblEmp2.Location = new System.Drawing.Point(149, 138);
             this.lblEmp2.Name = "lblEmp2";
             this.lblEmp2.Size = new System.Drawing.Size(100, 23);
             this.lblEmp2.TabIndex = 11;
@@ -391,7 +384,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.rdoEmp2Sales);
-            this.panel3.Location = new System.Drawing.Point(628, 126);
+            this.panel3.Location = new System.Drawing.Point(626, 126);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(111, 47);
             this.panel3.TabIndex = 14;
@@ -412,7 +405,7 @@
             // 
             this.chkEmp2Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkEmp2Time.AutoSize = true;
-            this.chkEmp2Time.Location = new System.Drawing.Point(437, 141);
+            this.chkEmp2Time.Location = new System.Drawing.Point(435, 141);
             this.chkEmp2Time.Name = "chkEmp2Time";
             this.chkEmp2Time.Size = new System.Drawing.Size(40, 17);
             this.chkEmp2Time.TabIndex = 12;
@@ -422,7 +415,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.rdoEmp2Manager);
-            this.panel1.Location = new System.Drawing.Point(518, 126);
+            this.panel1.Location = new System.Drawing.Point(516, 126);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(103, 47);
             this.panel1.TabIndex = 13;
@@ -474,24 +467,62 @@
             this.tabPage1.Text = "Sales History";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnLoyalty
+            // menuStrip1
             // 
-            this.btnLoyalty.Location = new System.Drawing.Point(466, 479);
-            this.btnLoyalty.Name = "btnLoyalty";
-            this.btnLoyalty.Size = new System.Drawing.Size(131, 54);
-            this.btnLoyalty.TabIndex = 1;
-            this.btnLoyalty.Text = "Loyalty Information";
-            this.btnLoyalty.UseVisualStyleBackColor = true;
-            this.btnLoyalty.Click += new System.EventHandler(this.btnLoyalty_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(788, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnRemoveCustomer
+            // fileToolStripMenuItem
             // 
-            this.btnRemoveCustomer.Location = new System.Drawing.Point(282, 479);
-            this.btnRemoveCustomer.Name = "btnRemoveCustomer";
-            this.btnRemoveCustomer.Size = new System.Drawing.Size(131, 54);
-            this.btnRemoveCustomer.TabIndex = 2;
-            this.btnRemoveCustomer.Text = "Remove Customer";
-            this.btnRemoveCustomer.UseVisualStyleBackColor = true;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // col1FirstName
+            // 
+            this.col1FirstName.HeaderText = "First Name";
+            this.col1FirstName.Name = "col1FirstName";
+            // 
+            // col2LastName
+            // 
+            this.col2LastName.HeaderText = "Last Name";
+            this.col2LastName.Name = "col2LastName";
+            // 
+            // col3Adr
+            // 
+            this.col3Adr.HeaderText = "Address";
+            this.col3Adr.Name = "col3Adr";
+            // 
+            // col4Phone
+            // 
+            this.col4Phone.HeaderText = "Phone";
+            this.col4Phone.Name = "col4Phone";
+            // 
+            // col5Email
+            // 
+            this.col5Email.HeaderText = "Email";
+            this.col5Email.Name = "col5Email";
+            // 
+            // col6
+            // 
+            this.col6.HeaderText = "Loyalty Member";
+            this.col6.Name = "col6";
+            this.col6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmPOS
             // 
@@ -499,6 +530,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 602);
             this.Controls.Add(this.tabPanel);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POSeidon Point Of Sale";
@@ -520,7 +553,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPanel.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -545,11 +581,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton rdoEmp1Sales;
         private System.Windows.Forms.DataGridView dgvCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col1FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col2LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col3Adr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col4Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col5Email;
         private System.Windows.Forms.CheckBox chkEmp3Time;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.RadioButton rdoEmp3Manager;
@@ -562,9 +593,17 @@
         private System.Windows.Forms.CheckBox chkEmp2Time;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rdoEmp2Manager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col6;
         private System.Windows.Forms.Button btnLoyalty;
         private System.Windows.Forms.Button btnRemoveCustomer;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col1FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col2LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col3Adr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col4Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col5Email;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn col6;
     }
 }
 

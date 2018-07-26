@@ -46,10 +46,12 @@ namespace POSeidon
                     myEmployee.EmpSales = SalesStatus();
                     myEmployee.EmpPay = PaymentStatus();
                     myEmployee.Wages = Convert.ToDouble(nudWage.Value);
+                    myEmployee.UserName = txtUserName.Text;
+                    myEmployee.Password = txtPassword.Text;
 
                     fileWriter.WriteLine(myEmployee.FirstName + ", " + myEmployee.LastName + ", "
                         + myEmployee.EmpManager + ", " + myEmployee.EmpFullTime + ", " + myEmployee.EmpSales +
-                        ", " + myEmployee.EmpPay + ", " + myEmployee.Wages);
+                        ", " + myEmployee.EmpPay + ", " + myEmployee.Wages + ", " + myEmployee.UserName + ", " + myEmployee.Password);
 
                     MessageBox.Show("Saved");
 

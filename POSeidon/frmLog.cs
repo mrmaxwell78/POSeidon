@@ -22,7 +22,7 @@ namespace POSeidon
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool login = false;
+            bool login = true;
 
             //try login here
             try

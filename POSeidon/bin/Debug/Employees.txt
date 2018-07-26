@@ -1,3 +1,2 @@
-Matthew, Maxwell, True, True, False, True, 450, maxw, 4277
-Daisy, Williams, True, True, False, True, 450, daisy, csharp
-Matthew, Maxwell, True, True, False, True, 450, maxw, 4277
+Matthew, Maxwell, True, True, False, False, 25, maxw, 4277
+Daisy, Williams, True, True, False, False, 25, daisy, csharp

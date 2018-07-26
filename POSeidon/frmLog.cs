@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -13,66 +14,50 @@ namespace POSeidon
 {
     public partial class frmLog : Form
     {
+        private OleDbConnection connection = new OleDbConnection();
+
         private Employee tempEmp = new Employee();
 
         public frmLog()
         {
             InitializeComponent();
+
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Matt\Desktop\POSeidon\POSeidon.accdb;Persist Security Info=True";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool login = true;
+            bool login = false;
 
-            //try login here
-            try
-            {
-                FileStream inFile = new FileStream("Employees.txt", FileMode.Open);
-
-                StreamReader sReader = new StreamReader(inFile);
-
-                Employee tempEmp = new Employee();
-
-                string line;
-                //priming read
-                line = sReader.ReadLine();
-
-                string[] fields = new string[9];
-                char[] sep = new char[1];
-                sep[0] = ',';
-
-                while (line != null)
-                {
-                    tempEmp = new Employee();
-
-                    fields = line.Split(sep);
-                    tempEmp.FirstName = fields[0];
-                    tempEmp.LastName = fields[1];
-                    tempEmp.EmpManager = Convert.ToBoolean(fields[2]);
-                    tempEmp.EmpFullTime = Convert.ToBoolean(fields[3]);
-                    tempEmp.EmpSales = Convert.ToBoolean(fields[4]);
-                    tempEmp.EmpSales = Convert.ToBoolean(fields[5]);
-                    tempEmp.Wages = Convert.ToDouble(fields[6]);
-                    tempEmp.UserName = fields[7];
-                    tempEmp.Password = fields[8];
-
-
-                    line = sReader.ReadLine();
-                }
-
-                sReader.Close();
-                inFile.Close();
+            //Open the connection
+            connection.Open();
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = connection;//Set command to the connection string
+            command.CommandText = "select * from LoginTable where Username='" + txtUsername.Text + "' and Password='" + txtPassword.Text + "'";
+            //Look for login info from the table^
+            OleDbDataReader reader = command.ExecuteReader(); //Execute the command statement
+            int count = 0; 
+            while (reader.Read())
+            {//Read from the database and look for matching
+                count++;
             }
-            catch (FileNotFoundException ex)
+            if(count == 1)//One Match
             {
-                MessageBox.Show("File not found!");
+                MessageBox.Show("Username and password is correct.");
+                login = true;
+            }
+            if(count > 1)//More than one match
+            {
+                MessageBox.Show("Duplicate Username and password.");
+            }
+            if(count < 1)//No match
+            {
+                MessageBox.Show("Incorrect Login info");
             }
 
-            //try login here
-            if (txtUsername.Text == tempEmp.UserName)
-                if (txtPassword.Text == tempEmp.Password)
-                    login = true;
-            //and then when it success update login variable as true
+
+            connection.Close();
+
 
             if (login == true)
             {
@@ -81,10 +66,8 @@ namespace POSeidon
                 frmPOS.ActiveForm.Opacity = 100; // show the form
 
             }
-            else
-            {
-                MessageBox.Show("Incorrect Username or Password.");
-            }
+           
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -92,5 +75,6 @@ namespace POSeidon
             this.Close();
             frmPOS.ActiveForm.Close();
         }
+
     }
 }

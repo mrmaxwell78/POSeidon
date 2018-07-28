@@ -207,7 +207,7 @@
             this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.8672F));
             this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.1328F));
             this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
+            this.tlpEmployee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
             this.tlpEmployee.Controls.Add(this.chkEmp3Time, 1, 3);
             this.tlpEmployee.Controls.Add(this.panel4, 2, 3);
             this.tlpEmployee.Controls.Add(this.panel5, 3, 3);
@@ -240,7 +240,7 @@
             // 
             this.chkEmp3Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkEmp3Time.AutoSize = true;
-            this.chkEmp3Time.Location = new System.Drawing.Point(432, 195);
+            this.chkEmp3Time.Location = new System.Drawing.Point(428, 195);
             this.chkEmp3Time.Name = "chkEmp3Time";
             this.chkEmp3Time.Size = new System.Drawing.Size(40, 17);
             this.chkEmp3Time.TabIndex = 16;
@@ -250,7 +250,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.rdoEmp3Manager);
-            this.panel4.Location = new System.Drawing.Point(512, 180);
+            this.panel4.Location = new System.Drawing.Point(508, 180);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(103, 47);
             this.panel4.TabIndex = 17;
@@ -270,7 +270,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.rdoEmp3Sales);
-            this.panel5.Location = new System.Drawing.Point(622, 180);
+            this.panel5.Location = new System.Drawing.Point(618, 180);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(111, 47);
             this.panel5.TabIndex = 18;
@@ -290,7 +290,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Location = new System.Drawing.Point(148, 192);
+            this.label1.Location = new System.Drawing.Point(146, 192);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 15;
@@ -301,7 +301,7 @@
             // 
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(148, 23);
+            this.lblName.Location = new System.Drawing.Point(146, 23);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(100, 23);
             this.lblName.TabIndex = 0;
@@ -312,7 +312,7 @@
             // 
             this.lblFullTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFullTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullTime.Location = new System.Drawing.Point(410, 23);
+            this.lblFullTime.Location = new System.Drawing.Point(407, 23);
             this.lblFullTime.Name = "lblFullTime";
             this.lblFullTime.Size = new System.Drawing.Size(83, 23);
             this.lblFullTime.TabIndex = 1;
@@ -323,7 +323,7 @@
             // 
             this.lblManager.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblManager.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManager.Location = new System.Drawing.Point(513, 23);
+            this.lblManager.Location = new System.Drawing.Point(509, 23);
             this.lblManager.Name = "lblManager";
             this.lblManager.Size = new System.Drawing.Size(100, 23);
             this.lblManager.TabIndex = 2;
@@ -334,7 +334,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(640, 23);
+            this.label2.Location = new System.Drawing.Point(638, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 3;
@@ -344,7 +344,7 @@
             // lblEmp1
             // 
             this.lblEmp1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEmp1.Location = new System.Drawing.Point(148, 84);
+            this.lblEmp1.Location = new System.Drawing.Point(146, 84);
             this.lblEmp1.Name = "lblEmp1";
             this.lblEmp1.Size = new System.Drawing.Size(100, 23);
             this.lblEmp1.TabIndex = 4;
@@ -355,7 +355,7 @@
             // 
             this.chkEmp1Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkEmp1Time.AutoSize = true;
-            this.chkEmp1Time.Location = new System.Drawing.Point(432, 87);
+            this.chkEmp1Time.Location = new System.Drawing.Point(428, 87);
             this.chkEmp1Time.Name = "chkEmp1Time";
             this.chkEmp1Time.Size = new System.Drawing.Size(40, 17);
             this.chkEmp1Time.TabIndex = 7;
@@ -366,7 +366,7 @@
             // pnlEmp1Man
             // 
             this.pnlEmp1Man.Controls.Add(this.rdoEmp1Manager);
-            this.pnlEmp1Man.Location = new System.Drawing.Point(512, 72);
+            this.pnlEmp1Man.Location = new System.Drawing.Point(508, 72);
             this.pnlEmp1Man.Name = "pnlEmp1Man";
             this.pnlEmp1Man.Size = new System.Drawing.Size(103, 47);
             this.pnlEmp1Man.TabIndex = 9;
@@ -386,7 +386,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.rdoEmp1Sales);
-            this.panel2.Location = new System.Drawing.Point(622, 72);
+            this.panel2.Location = new System.Drawing.Point(618, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(111, 47);
             this.panel2.TabIndex = 10;
@@ -406,7 +406,7 @@
             // lblEmp2
             // 
             this.lblEmp2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblEmp2.Location = new System.Drawing.Point(148, 138);
+            this.lblEmp2.Location = new System.Drawing.Point(146, 138);
             this.lblEmp2.Name = "lblEmp2";
             this.lblEmp2.Size = new System.Drawing.Size(100, 23);
             this.lblEmp2.TabIndex = 11;
@@ -416,7 +416,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.rdoEmp2Sales);
-            this.panel3.Location = new System.Drawing.Point(622, 126);
+            this.panel3.Location = new System.Drawing.Point(618, 126);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(111, 47);
             this.panel3.TabIndex = 14;
@@ -437,7 +437,7 @@
             // 
             this.chkEmp2Time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkEmp2Time.AutoSize = true;
-            this.chkEmp2Time.Location = new System.Drawing.Point(432, 141);
+            this.chkEmp2Time.Location = new System.Drawing.Point(428, 141);
             this.chkEmp2Time.Name = "chkEmp2Time";
             this.chkEmp2Time.Size = new System.Drawing.Size(40, 17);
             this.chkEmp2Time.TabIndex = 12;
@@ -447,7 +447,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.rdoEmp2Manager);
-            this.panel1.Location = new System.Drawing.Point(512, 126);
+            this.panel1.Location = new System.Drawing.Point(508, 126);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(103, 47);
             this.panel1.TabIndex = 13;
@@ -520,7 +520,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -531,7 +531,6 @@
             this.ClientSize = new System.Drawing.Size(788, 602);
             this.Controls.Add(this.tabPanel);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POSeidon Point Of Sale";
@@ -595,15 +594,15 @@
         private System.Windows.Forms.RadioButton rdoEmp2Manager;
         private System.Windows.Forms.Button btnLoyalty;
         private System.Windows.Forms.Button btnRemoveCustomer;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn col1FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col2LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col3Adr;
         private System.Windows.Forms.DataGridViewTextBoxColumn col4Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn col5Email;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col6;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

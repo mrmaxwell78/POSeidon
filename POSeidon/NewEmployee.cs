@@ -8,17 +8,22 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace POSeidon
 {
     public partial class frmNewEmployee : Form
     {
+        //Access DB connection
+        private OleDbConnection connection = new OleDbConnection();
+
         DataAccess data = new DataAccess();
 
 
         public frmNewEmployee()
         {
             InitializeComponent();
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Matt\Desktop\POSeidon\POSeidon.accdb;Persist Security Info=True";
         }
 
 
@@ -30,10 +35,37 @@ namespace POSeidon
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            bool manager, time, sales, payment = false;
             if (isValidEntry())
             {
                 try
-                {   //FileStream to output to a text file
+                {
+                    connection.Open();
+                    OleDbCommand command = new OleDbCommand();
+                    command.Connection = connection;
+
+                    manager = ManagerStatus();
+                    time = TimeStatus();
+                    sales = SalesStatus();
+                    payment = PaymentStatus();
+
+                    command.CommandText = "INSERT into EmployeeTable (FirstName, LastName, ManagerStatus, FullTimeStatus, SalesTeam, PaymentOption, Wages, Username, [Password]) VALUES (@FirstName, @LastName, @ManagerStatus, @FullTimeStatus, @SalesTeam, @PaymentOption, @Wages, @Username, @Password)";
+
+
+                    command.Parameters.Add("@FirstName", OleDbType.VarChar, 15).Value = txtNewName.Text;
+                    command.Parameters.Add("@LastName", OleDbType.VarChar, 15).Value = txtNewLastName.Text;
+                    command.Parameters.Add("@ManagerStatus", OleDbType.Boolean).Value = manager;
+                    command.Parameters.Add("@FullTimeStatus", OleDbType.Boolean).Value = time;
+                    command.Parameters.Add("@SalesTeam", OleDbType.Boolean).Value = sales;
+                    command.Parameters.Add("@PaymentOption", OleDbType.Boolean).Value = payment;
+                    command.Parameters.Add("@Wages", OleDbType.Currency).Value = nudWage.Value;
+                    command.Parameters.Add("@Username", OleDbType.VarChar).Value = txtUserName.Text;
+                    command.Parameters.Add("@Password", OleDbType.VarChar).Value = txtPassword.Text;
+
+                    command.ExecuteNonQuery();
+
+                    /*
+                    //FileStream to output to a text file
                     FileStream outfile = new FileStream("Employees.txt", FileMode.Append);
                     //StreamWriter is the one that actually writes to the file
                     StreamWriter fileWriter = new StreamWriter(outfile);
@@ -51,16 +83,16 @@ namespace POSeidon
                     fileWriter.WriteLine(data.tempEmp.FirstName + ", " + data.tempEmp.LastName + ", "
                         + data.tempEmp.EmpManager + ", " + data.tempEmp.EmpFullTime + ", " + data.tempEmp.EmpSales +
                         ", " + data.tempEmp.EmpPay + ", " + data.tempEmp.Wages + ", " + data.tempEmp.UserName + ", " + data.tempEmp.Password);
-
+                        */
                     MessageBox.Show("Saved");
 
                     data.empList.Add(data.tempEmp);
-
-                    fileWriter.Close();
-                    outfile.Close();
+                    connection.Close();
+                    //fileWriter.Close();
+                    //outfile.Close();
                 }
 
-                catch (FileNotFoundException) { }
+                catch (Exception exp) { }
 
             }
 

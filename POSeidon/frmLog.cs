@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace POSeidon
 {
     public partial class frmLog : Form
-    {
+    {   //Access DB connection
         private OleDbConnection connection = new OleDbConnection();
 
         private Employee tempEmp = new Employee();
@@ -46,11 +46,11 @@ namespace POSeidon
                 MessageBox.Show("Username and password is correct.");
                 login = true;
             }
-            if(count > 1)//More than one match
+            else if(count > 1)//More than one match
             {
                 MessageBox.Show("Duplicate Username and password.");
             }
-            if(count < 1)//No match
+            else//No match
             {
                 MessageBox.Show("Incorrect Login info");
             }

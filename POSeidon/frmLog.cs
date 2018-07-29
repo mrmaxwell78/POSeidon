@@ -33,7 +33,7 @@ namespace POSeidon
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;//Set command to the connection string
-            command.CommandText = "select * from LoginTable where Username='" + txtUsername.Text + "' and Password='" + txtPassword.Text + "'";
+            command.CommandText = "select Username, [Password] from LoginTable where Username='" + txtUsername.Text + "' and [Password]='" + txtPassword.Text + "'";
             //Look for login info from the table^
             OleDbDataReader reader = command.ExecuteReader(); //Execute the command statement
             int count = 0; 

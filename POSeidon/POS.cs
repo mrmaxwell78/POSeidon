@@ -14,6 +14,7 @@ namespace POSeidon
 {
     public partial class frmPOS : Form
     {
+        private OleDbConnection connection = new OleDbConnection();
         //Employee EmpList = new Employee();
         List<Employee> myEmpList = new List<Employee>();
         Customer myCustomer = new Customer();
@@ -24,6 +25,7 @@ namespace POSeidon
             frmlogin.Show();
             this.Opacity = 0;//to hide the POS
             InitializeComponent();
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Matt\Desktop\POSeidon\POSeidon.accdb;Persist Security Info=True";
         }
 
 
@@ -33,7 +35,7 @@ namespace POSeidon
             newEmp.Show();
             
            
-           
+          
         }
 
 
@@ -62,7 +64,7 @@ namespace POSeidon
         {
             if (tabPanel.SelectedTab == tabPage4)
             {//this is probably unneeded once Databases are working
-                
+                LoadCustomers();
             }
 
             if(tabPanel.SelectedTab == tabPage2)
@@ -126,7 +128,24 @@ namespace POSeidon
 
         private void LoadCustomers()
         {
-            //this is probably unneeded once Databases are working
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                string query = "SELECT * from CustomerTable";
+                command.CommandText = query;
+
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                dgvCustomer.DataSource = dataTable;
+
+                connection.Close();
+            }
+
+            catch(Exception ex) { }
+
         }
 
         private void SaveCustomers()
@@ -142,6 +161,11 @@ namespace POSeidon
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
         }
     }
 }

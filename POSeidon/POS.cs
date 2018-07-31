@@ -37,28 +37,7 @@ namespace POSeidon
            
           
         }
-
-
-        /*public void LoadEmployees(List<Employee> employees)//I'm not sure if this will work, testing to see if it will
-        {//This is probably also unneeded once databases are working
-            myEmpList = employees.ToList();
-            foreach (Employee tempEmp in myEmpList)
-            {/*Need to figure out a way to update lbls via a foreach loop
-                lblEmp1.Text = myEmpList[0].FirstName;
-                chkEmp1Time.Checked = Convert.ToBoolean(myEmpList[0].EmpFullTime);
-                rdoEmp1Manager.Checked = Convert.ToBoolean(myEmpList[0].EmpManager);
-                rdoEmp1Sales.Checked = Convert.ToBoolean(myEmpList[0].EmpSales);
-            }
-        }*/
       
-
-        private void chkEmp1Time_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkEmp1Time.Checked)
-                chkEmp1Time.Text = "Yes";
-            else
-                chkEmp1Time.Text = "No";
-        }
 
         private void tabPanel_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -71,58 +50,20 @@ namespace POSeidon
             {
                 try
                 {
-                    FileStream inFile = new FileStream("Employees.txt", FileMode.Open);
+                    connection.Open();
+                    OleDbCommand command = new OleDbCommand();
+                    command.Connection = connection;
+                    string query = "Select FirstName, LastName, ManagerStatus, FullTimeStatus, SalesTeam from EmployeeTable";
+                    command.CommandText = query;
 
-                    StreamReader sReader = new StreamReader(inFile);
-
-                    Employee tempEmp = new Employee();
-
-                    string line;
-                    //priming read
-                    line = sReader.ReadLine();
-
-                    string[] fields = new string[7];
-                    char[] sep = new char[1];
-                    sep[0] = ',';
-
-                    while (line != null)
-                    {
-                        tempEmp = new Employee();
-
-                        fields = line.Split(sep);
-                        tempEmp.FirstName = fields[0];
-                        tempEmp.LastName = fields[1];
-                        tempEmp.EmpManager = Convert.ToBoolean(fields[2]);
-                        tempEmp.EmpFullTime = Convert.ToBoolean(fields[3]);
-                        tempEmp.EmpSales = Convert.ToBoolean(fields[4]);
-                        tempEmp.EmpSales = Convert.ToBoolean(fields[5]);
-                        tempEmp.Wages = Convert.ToDouble(fields[6]);
-
-                        myEmpList.Add(tempEmp);
-
-                        line = sReader.ReadLine();
-                    }
-
-                    lblEmp1.Text = tempEmp.FirstName + " " + tempEmp.LastName;
-                    if (tempEmp.EmpFullTime == true)
-                    {
-                        chkEmp1Time.Checked = true;
-                    }
-                    if (tempEmp.EmpManager == true)
-                    {
-                        rdoEmp1Manager.Checked = true;
-                    }
-                    if (tempEmp.EmpSales == true)
-                    {
-                        rdoEmp1Sales.Checked = true;
-                    }
-                    
-                    sReader.Close();
-                    inFile.Close();
-
+                    OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    oleDbDataAdapter.Fill(dataTable);
+                    dgvEmployee.DataSource = dataTable;
+                    connection.Close();
                 }
-                catch (FileNotFoundException) { }
-                //this was experimenting to see if reading would work
+                catch (Exception) { }
+                
             }
         }
 
@@ -167,5 +108,13 @@ namespace POSeidon
         {
             LoadCustomers();
         }
+
+        private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {/*
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvEmployee.Rows[e.RowIndex];
+            }*/
+        } //this is eventually for changes in the datagridview 
     }
 }

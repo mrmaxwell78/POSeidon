@@ -21,7 +21,9 @@ namespace POSeidon
         public frmLog()
         {
             InitializeComponent();
-
+            //Relative Path
+            //connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\POSeidon.accdb;Persist Security Info=True";
+            //Absolute Path.
             connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Matt\Desktop\POSeidon\POSeidon.accdb;Persist Security Info=True";
         }
 
@@ -33,7 +35,7 @@ namespace POSeidon
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;//Set command to the connection string
-            command.CommandText = "select Username, [Password] from LoginTable where Username='" + txtUsername.Text + "' and [Password]='" + txtPassword.Text + "'";
+            command.CommandText = "select Username, [Password] from EmployeeTable where Username='" + txtUsername.Text + "' and [Password]='" + txtPassword.Text + "'";
             //Look for login info from the table^
             OleDbDataReader reader = command.ExecuteReader(); //Execute the command statement
             int count = 0; 
@@ -43,7 +45,7 @@ namespace POSeidon
             }
             if(count == 1)//One Match
             {
-                MessageBox.Show("Username and password is correct.");
+                //MessageBox.Show("Username and password is correct.");
                 login = true;
             }
             else if(count > 1)//More than one match

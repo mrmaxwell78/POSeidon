@@ -64,12 +64,6 @@ namespace POSeidon
 
                     command.ExecuteNonQuery();
 
-                    /*
-                    //FileStream to output to a text file
-                    FileStream outfile = new FileStream("Employees.txt", FileMode.Append);
-                    //StreamWriter is the one that actually writes to the file
-                    StreamWriter fileWriter = new StreamWriter(outfile);
-                    //get data from form
                     data.tempEmp.FirstName = txtNewName.Text;
                     data.tempEmp.LastName = txtNewLastName.Text;
                     data.tempEmp.EmpManager = ManagerStatus();
@@ -80,16 +74,11 @@ namespace POSeidon
                     data.tempEmp.UserName = txtUserName.Text;
                     data.tempEmp.Password = txtPassword.Text;
 
-                    fileWriter.WriteLine(data.tempEmp.FirstName + ", " + data.tempEmp.LastName + ", "
-                        + data.tempEmp.EmpManager + ", " + data.tempEmp.EmpFullTime + ", " + data.tempEmp.EmpSales +
-                        ", " + data.tempEmp.EmpPay + ", " + data.tempEmp.Wages + ", " + data.tempEmp.UserName + ", " + data.tempEmp.Password);
-                        */
                     MessageBox.Show("Saved");
 
                     data.empList.Add(data.tempEmp);
                     connection.Close();
-                    //fileWriter.Close();
-                    //outfile.Close();
+                  
                 }
 
                 catch (Exception exp) { }

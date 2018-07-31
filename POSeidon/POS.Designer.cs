@@ -61,6 +61,7 @@
             this.tabPage5.Size = new System.Drawing.Size(776, 540);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Make A Sale";
+            this.tabPage5.ToolTipText = "Make A Sale";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage4
@@ -95,6 +96,7 @@
             this.btnRemoveCustomer.TabIndex = 2;
             this.btnRemoveCustomer.Text = "Remove Customer";
             this.btnRemoveCustomer.UseVisualStyleBackColor = true;
+            this.btnRemoveCustomer.Click += new System.EventHandler(this.btnRemoveCustomer_Click);
             // 
             // btnLoyalty
             // 
@@ -137,15 +139,16 @@
             this.tabPage2.Size = new System.Drawing.Size(776, 540);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Employee List";
+            this.tabPage2.ToolTipText = "List of Employees";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dgvEmployee
             // 
             this.dgvEmployee.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployee.Location = new System.Drawing.Point(33, 26);
+            this.dgvEmployee.Location = new System.Drawing.Point(100, 55);
             this.dgvEmployee.Name = "dgvEmployee";
-            this.dgvEmployee.Size = new System.Drawing.Size(708, 372);
+            this.dgvEmployee.Size = new System.Drawing.Size(580, 372);
             this.dgvEmployee.TabIndex = 2;
             this.dgvEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellContentClick);
             // 
@@ -182,6 +185,7 @@
             this.tabPage1.Size = new System.Drawing.Size(776, 540);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sales History";
+            this.tabPage1.ToolTipText = "Previous Sales";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // menuStrip1

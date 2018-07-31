@@ -116,5 +116,38 @@ namespace POSeidon
                 DataGridViewRow row = dgvEmployee.Rows[e.RowIndex];
             }*/
         } //this is eventually for changes in the datagridview 
+
+        private void btnRemoveCustomer_Click(object sender, EventArgs e)
+        {/* This ended up deleting everything from the customer table :(
+            connection.Open();
+            OleDbCommand command = new OleDbCommand();
+            for (int i = 0; i < dgvCustomer.Rows.Count; i++)
+            {
+                DataGridViewRow delrow = dgvCustomer.Rows[i];
+                if(delrow.Selected == true)
+                {
+                    dgvCustomer.Rows.RemoveAt(i);
+                }
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM CustomerTable WHERE ID=" + i + "";
+                   
+                    command.ExecuteNonQuery();
+                    
+                }
+                catch(Exception expt) { }
+            }
+
+            foreach(DataGridViewRow row in dgvCustomer.Rows)
+            {
+                if (row.Selected)
+                {
+                    dgvCustomer.Rows.RemoveAt(row.Index);
+                    break;
+                }
+            }
+            connection.Close();
+        }*/
     }
 }

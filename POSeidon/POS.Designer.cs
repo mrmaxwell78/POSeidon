@@ -45,12 +45,36 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
+            this.pOSeidonDataSet = new POSeidon.POSeidonDataSet();
+            this.inventoryTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryTableTableAdapter = new POSeidon.POSeidonDataSetTableAdapters.InventoryTableTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sKUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSalesHistory = new System.Windows.Forms.DataGridView();
+            this.salesHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sales_HistoryTableAdapter = new POSeidon.POSeidonDataSetTableAdapters.Sales_HistoryTableAdapter();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sKUDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.tabPanel.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pOSeidonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage5
@@ -121,6 +145,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dgvInventory);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -179,6 +204,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dgvSalesHistory);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -213,6 +239,121 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // dgvInventory
+            // 
+            this.dgvInventory.AutoGenerateColumns = false;
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.itemNameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.sKUDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn});
+            this.dgvInventory.DataSource = this.inventoryTableBindingSource;
+            this.dgvInventory.Location = new System.Drawing.Point(0, 0);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.Size = new System.Drawing.Size(776, 491);
+            this.dgvInventory.TabIndex = 0;
+            // 
+            // pOSeidonDataSet
+            // 
+            this.pOSeidonDataSet.DataSetName = "POSeidonDataSet";
+            this.pOSeidonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inventoryTableBindingSource
+            // 
+            this.inventoryTableBindingSource.DataMember = "InventoryTable";
+            this.inventoryTableBindingSource.DataSource = this.pOSeidonDataSet;
+            // 
+            // inventoryTableTableAdapter
+            // 
+            this.inventoryTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // itemNameDataGridViewTextBoxColumn
+            // 
+            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "Item Name";
+            this.itemNameDataGridViewTextBoxColumn.HeaderText = "Item Name";
+            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // sKUDataGridViewTextBoxColumn
+            // 
+            this.sKUDataGridViewTextBoxColumn.DataPropertyName = "SKU";
+            this.sKUDataGridViewTextBoxColumn.HeaderText = "SKU";
+            this.sKUDataGridViewTextBoxColumn.Name = "sKUDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // dgvSalesHistory
+            // 
+            this.dgvSalesHistory.AutoGenerateColumns = false;
+            this.dgvSalesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalesHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn1,
+            this.itemNameDataGridViewTextBoxColumn1,
+            this.priceDataGridViewTextBoxColumn1,
+            this.sKUDataGridViewTextBoxColumn1,
+            this.customerDataGridViewTextBoxColumn});
+            this.dgvSalesHistory.DataSource = this.salesHistoryBindingSource;
+            this.dgvSalesHistory.Location = new System.Drawing.Point(1, 3);
+            this.dgvSalesHistory.Name = "dgvSalesHistory";
+            this.dgvSalesHistory.Size = new System.Drawing.Size(774, 463);
+            this.dgvSalesHistory.TabIndex = 0;
+            // 
+            // salesHistoryBindingSource
+            // 
+            this.salesHistoryBindingSource.DataMember = "Sales History";
+            this.salesHistoryBindingSource.DataSource = this.pOSeidonDataSet;
+            // 
+            // sales_HistoryTableAdapter
+            // 
+            this.sales_HistoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            // 
+            // itemNameDataGridViewTextBoxColumn1
+            // 
+            this.itemNameDataGridViewTextBoxColumn1.DataPropertyName = "Item Name";
+            this.itemNameDataGridViewTextBoxColumn1.HeaderText = "Item Name";
+            this.itemNameDataGridViewTextBoxColumn1.Name = "itemNameDataGridViewTextBoxColumn1";
+            // 
+            // priceDataGridViewTextBoxColumn1
+            // 
+            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
+            // 
+            // sKUDataGridViewTextBoxColumn1
+            // 
+            this.sKUDataGridViewTextBoxColumn1.DataPropertyName = "SKU";
+            this.sKUDataGridViewTextBoxColumn1.HeaderText = "SKU";
+            this.sKUDataGridViewTextBoxColumn1.Name = "sKUDataGridViewTextBoxColumn1";
+            // 
+            // customerDataGridViewTextBoxColumn
+            // 
+            this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
+            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
+            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
+            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,11 +366,18 @@
             this.Text = "POSeidon Point Of Sale";
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.tabPanel.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pOSeidonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,6 +400,23 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.DataGridView dgvEmployee;
+        private System.Windows.Forms.DataGridView dgvInventory;
+        private POSeidonDataSet pOSeidonDataSet;
+        private System.Windows.Forms.BindingSource inventoryTableBindingSource;
+        private POSeidonDataSetTableAdapters.InventoryTableTableAdapter inventoryTableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sKUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dgvSalesHistory;
+        private System.Windows.Forms.BindingSource salesHistoryBindingSource;
+        private POSeidonDataSetTableAdapters.Sales_HistoryTableAdapter sales_HistoryTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sKUDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
     }
 }
 

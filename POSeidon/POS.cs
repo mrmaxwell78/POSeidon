@@ -25,7 +25,7 @@ namespace POSeidon
             frmlogin.Show();
             this.Opacity = 0;//to hide the POS
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Matt\Desktop\POSeidon\POSeidon.accdb;Persist Security Info=True";
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\POSeidon.accdb;Persist Security Info=True";
         }
 
 
@@ -33,11 +33,9 @@ namespace POSeidon
         {
             frmNewEmployee newEmp = new frmNewEmployee();
             newEmp.Show();
-            
-           
-          
+
         }
-      
+
 
         private void tabPanel_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -46,24 +44,20 @@ namespace POSeidon
                 LoadCustomers();
             }
 
-            if(tabPanel.SelectedTab == tabPage2)
+            if (tabPanel.SelectedTab == tabPage2)
             {
-                try
-                {
-                    connection.Open();
-                    OleDbCommand command = new OleDbCommand();
-                    command.Connection = connection;
-                    string query = "Select FirstName, LastName, ManagerStatus, FullTimeStatus, SalesTeam from EmployeeTable";
-                    command.CommandText = query;
+                loadEmployees();
 
-                    OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
-                    DataTable dataTable = new DataTable();
-                    oleDbDataAdapter.Fill(dataTable);
-                    dgvEmployee.DataSource = dataTable;
-                    connection.Close();
-                }
-                catch (Exception) { }
-                
+            }
+
+            if(tabPanel.SelectedTab == tabPage1)
+            {
+                loadSalesHistory();
+            }
+
+            if(tabPanel.SelectedTab == tabPage3)
+            {
+                loadInventory();
             }
         }
 
@@ -85,7 +79,7 @@ namespace POSeidon
                 connection.Close();
             }
 
-            catch(Exception ex) { }
+            catch (Exception ex) { }
 
         }
 
@@ -107,6 +101,63 @@ namespace POSeidon
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             LoadCustomers();
+        }
+
+        private void loadEmployees()
+        {
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                string query = "Select FirstName, LastName, ManagerStatus, FullTimeStatus, SalesTeam from EmployeeTable";
+                command.CommandText = query;
+
+                OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                oleDbDataAdapter.Fill(dataTable);
+                dgvEmployee.DataSource = dataTable;
+                connection.Close();
+            }
+            catch (Exception) { }
+        }
+
+        private void loadSalesHistory()
+        {
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                string query = "Select * from Sales History";
+                command.CommandText = query;
+
+                OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                oleDbDataAdapter.Fill(dataTable);
+                dgvSalesHistory.DataSource = dataTable;
+                connection.Close();
+            }
+            catch (Exception) { }
+        }
+
+        private void loadInventory()
+        {
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                string query = "Select * from IventoryTable";
+                command.CommandText = query;
+
+                OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                oleDbDataAdapter.Fill(dataTable);
+                dgvInventory.DataSource = dataTable;
+                connection.Close();
+            }
+            catch (Exception) { }
         }
 
         private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -149,5 +200,12 @@ namespace POSeidon
             }
             connection.Close();
         }*/
+        }
+
+        private void frmPOS_Load(object sender, EventArgs e)
+        {
+           
+
+        }
     }
 }

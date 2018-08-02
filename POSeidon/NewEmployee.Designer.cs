@@ -81,6 +81,7 @@
             this.txtNewName.Name = "txtNewName";
             this.txtNewName.Size = new System.Drawing.Size(100, 20);
             this.txtNewName.TabIndex = 2;
+            this.txtNewName.Validating += new System.ComponentModel.CancelEventHandler(this.txtNewName_Validating);
             // 
             // txtNewLastName
             // 
@@ -88,6 +89,7 @@
             this.txtNewLastName.Name = "txtNewLastName";
             this.txtNewLastName.Size = new System.Drawing.Size(100, 20);
             this.txtNewLastName.TabIndex = 3;
+            this.txtNewLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtNewLastName_Validating);
             // 
             // grpStatus
             // 
@@ -132,6 +134,7 @@
             this.grpTime.TabIndex = 6;
             this.grpTime.TabStop = false;
             this.grpTime.Text = "Full Time?";
+           
             // 
             // rdoTimeNo
             // 

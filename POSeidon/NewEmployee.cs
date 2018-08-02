@@ -23,7 +23,7 @@ namespace POSeidon
         public frmNewEmployee()
         {
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Matt\Desktop\POSeidon\POSeidon.accdb;Persist Security Info=True";
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\POSeidon.accdb;Persist Security Info=True";
         }
 
 
@@ -102,45 +102,6 @@ namespace POSeidon
 
         private bool isValidEntry()//method to determine if all of the user input is valid
         {
-            if (txtNewName.Text == string.Empty)//check to see if the textbox is empty
-            {
-                MessageBox.Show("Please enter a first name.");
-                return false;
-            }
-
-            if (txtNewName.Text != string.Empty)//check to see if the textbox is not empty
-            {
-                char.ToUpper(txtNewName.Text[0]);//if not empty, upper case the first char
-
-                for (int i = 0; i < txtNewName.Text.Length; i++)//itterate through the string and determine the chars are all letters
-                {
-                    if (char.IsDigit(txtNewName.Text[i]))//if char is a digit, show message
-                    {
-                        MessageBox.Show("Please no digits.");
-                        return false;
-                    }
-
-                }
-            }
-
-            if (txtNewLastName.Text == string.Empty)//check to see if the textbox is empty
-            {
-                MessageBox.Show("Please enter a last name.");
-                return false;
-            }
-
-            if (txtNewLastName.Text != string.Empty)
-            { //itterate through the string and determine the chars are all letters
-                for (int i = 0; i < txtNewLastName.Text.Length; i++)
-                {
-                    if (char.IsDigit(txtNewLastName.Text[i]))//if char is a digit show message
-                    {
-                        MessageBox.Show("Please no digits.");
-                        return false;
-                    }
-                }
-            }
-
             if (!rdoManagerYes.Checked && !rdoManagerNo.Checked)//check that one radio buttons is checked
             {
                 MessageBox.Show("Please select if the new Employee is a manager or not.");
@@ -208,6 +169,51 @@ namespace POSeidon
                 return true;
             else
                 return false;
+        }
+
+        private void txtNewName_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNewName.Text == string.Empty)//check to see if the textbox is empty
+            {
+                MessageBox.Show("Please enter a first name.");
+                e.Cancel = true;
+            }
+
+            if (txtNewName.Text != string.Empty)//check to see if the textbox is not empty
+            {
+                char.ToUpper(txtNewName.Text[0]);//if not empty, upper case the first char
+
+                for (int i = 0; i < txtNewName.Text.Length; i++)//itterate through the string and determine the chars are all letters
+                {
+                    if (char.IsDigit(txtNewName.Text[i]))//if char is a digit, show message
+                    {
+                        MessageBox.Show("Please no digits.");
+                        e.Cancel = true;
+                    }
+
+                }
+            }
+        }
+
+        private void txtNewLastName_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNewLastName.Text == string.Empty)//check to see if the textbox is empty
+            {
+                MessageBox.Show("Please enter a last name.");
+                e.Cancel = true;
+            }
+
+            if (txtNewLastName.Text != string.Empty)
+            { //itterate through the string and determine the chars are all letters
+                for (int i = 0; i < txtNewLastName.Text.Length; i++)
+                {
+                    if (char.IsDigit(txtNewLastName.Text[i]))//if char is a digit show message
+                    {
+                        MessageBox.Show("Please no digits.");
+                        e.Cancel = true;
+                    }
+                }
+            }
         }
     }
 }

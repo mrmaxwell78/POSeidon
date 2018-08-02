@@ -33,3 +33,4 @@ C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.csproj.GenerateResour
 C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.csproj.CoreCompileInputs.cache
 C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.exe
 C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.pdb
+C:\Users\Matt\Desktop\POSeidon\POSeidon\bin\Debug\POSeidon.accdb

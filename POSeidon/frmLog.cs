@@ -16,15 +16,11 @@ namespace POSeidon
     {   //Access DB connection
         private OleDbConnection connection = new OleDbConnection();
 
-        private Employee tempEmp = new Employee();
-
         public frmLog()
         {
             InitializeComponent();
-            //Relative Path
-            //connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\POSeidon.accdb;Persist Security Info=True";
-            //Absolute Path.
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Matt\Desktop\POSeidon\POSeidon.accdb;Persist Security Info=True";
+       
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\POSeidon.accdb;Persist Security Info=True";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

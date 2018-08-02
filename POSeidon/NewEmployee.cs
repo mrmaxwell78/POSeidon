@@ -77,6 +77,7 @@ namespace POSeidon
                     MessageBox.Show("Saved");
 
                     data.empList.Add(data.tempEmp);
+                    command.Connection.Close();
                     connection.Close();
                   
                 }

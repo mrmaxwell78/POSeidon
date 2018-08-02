@@ -117,6 +117,7 @@ namespace POSeidon
                 DataTable dataTable = new DataTable();
                 oleDbDataAdapter.Fill(dataTable);
                 dgvEmployee.DataSource = dataTable;
+                command.Connection.Close();
                 connection.Close();
             }
             catch (Exception) { }
@@ -136,6 +137,7 @@ namespace POSeidon
                 DataTable dataTable = new DataTable();
                 oleDbDataAdapter.Fill(dataTable);
                 dgvSalesHistory.DataSource = dataTable;
+                command.Connection.Close();
                 connection.Close();
             }
             catch (Exception) { }
@@ -155,6 +157,7 @@ namespace POSeidon
                 DataTable dataTable = new DataTable();
                 oleDbDataAdapter.Fill(dataTable);
                 dgvInventory.DataSource = dataTable;
+                command.Connection.Close();
                 connection.Close();
             }
             catch (Exception) { }

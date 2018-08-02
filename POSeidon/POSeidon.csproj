@@ -149,7 +149,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icon1.ico" />
     <Content Include="POSeidon.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -53,7 +53,7 @@ namespace POSeidon
                 MessageBox.Show("Incorrect Login info");
             }
 
-
+            command.Connection.Close();
             connection.Close();
 
 

@@ -28,8 +28,7 @@ namespace POSeidon
 
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {//This needs to be fixed!
-           // frmPOS.LoadEmployees(empList);
+        {
             this.Close();
         }
 

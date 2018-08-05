@@ -205,10 +205,11 @@ namespace POSeidon
         }*/
         }
 
-        private void frmPOS_Load(object sender, EventArgs e)
+        private void btnNewCustomer_Click(object sender, EventArgs e)
         {
-           
-
+            frmNewCustomer customer = new frmNewCustomer();
+            customer.Show();
+            
         }
     }
 }

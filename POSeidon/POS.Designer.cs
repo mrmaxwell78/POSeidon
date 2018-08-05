@@ -37,44 +37,48 @@
             this.btnLoyalty = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvEmployee = new System.Windows.Forms.DataGridView();
-            this.btnNewEmployee = new System.Windows.Forms.Button();
-            this.tabPanel = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.pOSeidonDataSet = new POSeidon.POSeidonDataSet();
-            this.inventoryTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventoryTableTableAdapter = new POSeidon.POSeidonDataSetTableAdapters.InventoryTableTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sKUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventoryTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pOSeidonDataSet = new POSeidon.POSeidonDataSet();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvEmployee = new System.Windows.Forms.DataGridView();
+            this.btnNewEmployee = new System.Windows.Forms.Button();
+            this.tabPanel = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvSalesHistory = new System.Windows.Forms.DataGridView();
-            this.salesHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sales_HistoryTableAdapter = new POSeidon.POSeidonDataSetTableAdapters.Sales_HistoryTableAdapter();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sKUDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryTableTableAdapter = new POSeidon.POSeidonDataSetTableAdapters.InventoryTableTableAdapter();
+            this.sales_HistoryTableAdapter = new POSeidon.POSeidonDataSetTableAdapters.Sales_HistoryTableAdapter();
+            this.customerTableAdapter1 = new POSeidon.POSeidonDataSetTableAdapters.CustomerTableAdapter();
+            this.customerTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnNewCustomer = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pOSeidonDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.tabPanel.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pOSeidonDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesHistoryBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage5
@@ -90,6 +94,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnNewCustomer);
             this.tabPage4.Controls.Add(this.btnCustomer);
             this.tabPage4.Controls.Add(this.btnRemoveCustomer);
             this.tabPage4.Controls.Add(this.btnLoyalty);
@@ -104,7 +109,7 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.Location = new System.Drawing.Point(101, 479);
+            this.btnCustomer.Location = new System.Drawing.Point(43, 479);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(137, 54);
             this.btnCustomer.TabIndex = 3;
@@ -114,7 +119,7 @@
             // 
             // btnRemoveCustomer
             // 
-            this.btnRemoveCustomer.Location = new System.Drawing.Point(282, 479);
+            this.btnRemoveCustomer.Location = new System.Drawing.Point(209, 479);
             this.btnRemoveCustomer.Name = "btnRemoveCustomer";
             this.btnRemoveCustomer.Size = new System.Drawing.Size(131, 54);
             this.btnRemoveCustomer.TabIndex = 2;
@@ -124,7 +129,7 @@
             // 
             // btnLoyalty
             // 
-            this.btnLoyalty.Location = new System.Drawing.Point(466, 479);
+            this.btnLoyalty.Location = new System.Drawing.Point(528, 480);
             this.btnLoyalty.Name = "btnLoyalty";
             this.btnLoyalty.Size = new System.Drawing.Size(131, 54);
             this.btnLoyalty.TabIndex = 1;
@@ -153,6 +158,63 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Inventory List";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dgvInventory
+            // 
+            this.dgvInventory.AutoGenerateColumns = false;
+            this.dgvInventory.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.itemNameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.sKUDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn});
+            this.dgvInventory.DataSource = this.inventoryTableBindingSource;
+            this.dgvInventory.Location = new System.Drawing.Point(0, 0);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.Size = new System.Drawing.Size(776, 491);
+            this.dgvInventory.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // itemNameDataGridViewTextBoxColumn
+            // 
+            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "Item Name";
+            this.itemNameDataGridViewTextBoxColumn.HeaderText = "Item Name";
+            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // sKUDataGridViewTextBoxColumn
+            // 
+            this.sKUDataGridViewTextBoxColumn.DataPropertyName = "SKU";
+            this.sKUDataGridViewTextBoxColumn.HeaderText = "SKU";
+            this.sKUDataGridViewTextBoxColumn.Name = "sKUDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // inventoryTableBindingSource
+            // 
+            this.inventoryTableBindingSource.DataMember = "InventoryTable";
+            this.inventoryTableBindingSource.DataSource = this.pOSeidonDataSet;
+            // 
+            // pOSeidonDataSet
+            // 
+            this.pOSeidonDataSet.DataSetName = "POSeidonDataSet";
+            this.pOSeidonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage2
             // 
@@ -214,94 +276,10 @@
             this.tabPage1.ToolTipText = "Previous Sales";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(788, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // dgvInventory
-            // 
-            this.dgvInventory.AutoGenerateColumns = false;
-            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.itemNameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.sKUDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn});
-            this.dgvInventory.DataSource = this.inventoryTableBindingSource;
-            this.dgvInventory.Location = new System.Drawing.Point(0, 0);
-            this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.Size = new System.Drawing.Size(776, 491);
-            this.dgvInventory.TabIndex = 0;
-            // 
-            // pOSeidonDataSet
-            // 
-            this.pOSeidonDataSet.DataSetName = "POSeidonDataSet";
-            this.pOSeidonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // inventoryTableBindingSource
-            // 
-            this.inventoryTableBindingSource.DataMember = "InventoryTable";
-            this.inventoryTableBindingSource.DataSource = this.pOSeidonDataSet;
-            // 
-            // inventoryTableTableAdapter
-            // 
-            this.inventoryTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // itemNameDataGridViewTextBoxColumn
-            // 
-            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "Item Name";
-            this.itemNameDataGridViewTextBoxColumn.HeaderText = "Item Name";
-            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // sKUDataGridViewTextBoxColumn
-            // 
-            this.sKUDataGridViewTextBoxColumn.DataPropertyName = "SKU";
-            this.sKUDataGridViewTextBoxColumn.HeaderText = "SKU";
-            this.sKUDataGridViewTextBoxColumn.Name = "sKUDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
             // dgvSalesHistory
             // 
             this.dgvSalesHistory.AutoGenerateColumns = false;
+            this.dgvSalesHistory.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSalesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalesHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
@@ -314,15 +292,6 @@
             this.dgvSalesHistory.Name = "dgvSalesHistory";
             this.dgvSalesHistory.Size = new System.Drawing.Size(774, 463);
             this.dgvSalesHistory.TabIndex = 0;
-            // 
-            // salesHistoryBindingSource
-            // 
-            this.salesHistoryBindingSource.DataMember = "Sales History";
-            this.salesHistoryBindingSource.DataSource = this.pOSeidonDataSet;
-            // 
-            // sales_HistoryTableAdapter
-            // 
-            this.sales_HistoryTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn1
             // 
@@ -354,6 +323,64 @@
             this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
             this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
             // 
+            // salesHistoryBindingSource
+            // 
+            this.salesHistoryBindingSource.DataMember = "Sales History";
+            this.salesHistoryBindingSource.DataSource = this.pOSeidonDataSet;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(788, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // inventoryTableTableAdapter
+            // 
+            this.inventoryTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // sales_HistoryTableAdapter
+            // 
+            this.sales_HistoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // customerTableAdapter1
+            // 
+            this.customerTableAdapter1.ClearBeforeFill = true;
+            // 
+            // customerTableBindingSource
+            // 
+            this.customerTableBindingSource.AllowNew = true;
+            this.customerTableBindingSource.DataMember = "CustomerTable";
+            this.customerTableBindingSource.DataSource = this.pOSeidonDataSet;
+            // 
+            // btnNewCustomer
+            // 
+            this.btnNewCustomer.Location = new System.Drawing.Point(360, 479);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.Size = new System.Drawing.Size(145, 54);
+            this.btnNewCustomer.TabIndex = 4;
+            this.btnNewCustomer.Text = "New Customer";
+            this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
+            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,17 +394,18 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pOSeidonDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.tabPanel.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pOSeidonDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesHistoryBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,6 +445,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sKUDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
+        private POSeidonDataSetTableAdapters.CustomerTableAdapter customerTableAdapter1;
+        private System.Windows.Forms.BindingSource customerTableBindingSource;
+        private System.Windows.Forms.Button btnNewCustomer;
     }
 }
 

@@ -249,12 +249,12 @@ namespace POSeidon
 
                     lstSale.DataSource = inventoryTableTableAdapter1;
                     lstSale.DisplayMember = "Item" + "Price";
-          
+                    connection.Close();
                 }
 
                 catch (Exception) { }
             }
-            connection.Close();
+            
         }
     }
 }

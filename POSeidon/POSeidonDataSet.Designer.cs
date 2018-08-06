@@ -32,7 +32,7 @@ namespace POSeidon {
         
         private LoginTableDataTable tableLoginTable;
         
-        private Sales_HistoryDataTable tableSales_History;
+        private SalesHistoryDataTable tableSalesHistory;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -74,8 +74,8 @@ namespace POSeidon {
                 if ((ds.Tables["LoginTable"] != null)) {
                     base.Tables.Add(new LoginTableDataTable(ds.Tables["LoginTable"]));
                 }
-                if ((ds.Tables["Sales History"] != null)) {
-                    base.Tables.Add(new Sales_HistoryDataTable(ds.Tables["Sales History"]));
+                if ((ds.Tables["SalesHistory"] != null)) {
+                    base.Tables.Add(new SalesHistoryDataTable(ds.Tables["SalesHistory"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -139,9 +139,9 @@ namespace POSeidon {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Sales_HistoryDataTable Sales_History {
+        public SalesHistoryDataTable SalesHistory {
             get {
-                return this.tableSales_History;
+                return this.tableSalesHistory;
             }
         }
         
@@ -224,8 +224,8 @@ namespace POSeidon {
                 if ((ds.Tables["LoginTable"] != null)) {
                     base.Tables.Add(new LoginTableDataTable(ds.Tables["LoginTable"]));
                 }
-                if ((ds.Tables["Sales History"] != null)) {
-                    base.Tables.Add(new Sales_HistoryDataTable(ds.Tables["Sales History"]));
+                if ((ds.Tables["SalesHistory"] != null)) {
+                    base.Tables.Add(new SalesHistoryDataTable(ds.Tables["SalesHistory"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -284,10 +284,10 @@ namespace POSeidon {
                     this.tableLoginTable.InitVars();
                 }
             }
-            this.tableSales_History = ((Sales_HistoryDataTable)(base.Tables["Sales History"]));
+            this.tableSalesHistory = ((SalesHistoryDataTable)(base.Tables["SalesHistory"]));
             if ((initTable == true)) {
-                if ((this.tableSales_History != null)) {
-                    this.tableSales_History.InitVars();
+                if ((this.tableSalesHistory != null)) {
+                    this.tableSalesHistory.InitVars();
                 }
             }
         }
@@ -308,8 +308,8 @@ namespace POSeidon {
             base.Tables.Add(this.tableInventoryTable);
             this.tableLoginTable = new LoginTableDataTable();
             base.Tables.Add(this.tableLoginTable);
-            this.tableSales_History = new Sales_HistoryDataTable();
-            base.Tables.Add(this.tableSales_History);
+            this.tableSalesHistory = new SalesHistoryDataTable();
+            base.Tables.Add(this.tableSalesHistory);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -338,7 +338,7 @@ namespace POSeidon {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeSales_History() {
+        private bool ShouldSerializeSalesHistory() {
             return false;
         }
         
@@ -410,7 +410,7 @@ namespace POSeidon {
         public delegate void LoginTableRowChangeEventHandler(object sender, LoginTableRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void Sales_HistoryRowChangeEventHandler(object sender, Sales_HistoryRowChangeEvent e);
+        public delegate void SalesHistoryRowChangeEventHandler(object sender, SalesHistoryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -599,8 +599,8 @@ namespace POSeidon {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnFirst_Name = base.Columns["First Name"];
-                this.columnLast_Name = base.Columns["Last Name"];
+                this.columnFirst_Name = base.Columns["First_Name"];
+                this.columnLast_Name = base.Columns["Last_Name"];
                 this.columnAddress = base.Columns["Address"];
                 this.columnPhone = base.Columns["Phone"];
                 this.columnEmail = base.Columns["Email"];
@@ -612,9 +612,9 @@ namespace POSeidon {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnFirst_Name = new global::System.Data.DataColumn("First Name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnFirst_Name = new global::System.Data.DataColumn("First_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFirst_Name);
-                this.columnLast_Name = new global::System.Data.DataColumn("Last Name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnLast_Name = new global::System.Data.DataColumn("Last_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLast_Name);
                 this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAddress);
@@ -1162,13 +1162,15 @@ namespace POSeidon {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnItem_Name;
+            private global::System.Data.DataColumn columnItem;
             
             private global::System.Data.DataColumn columnPrice;
             
             private global::System.Data.DataColumn columnSKU;
             
             private global::System.Data.DataColumn columnDescription;
+            
+            private global::System.Data.DataColumn columnQuantity;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1213,9 +1215,9 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Item_NameColumn {
+            public global::System.Data.DataColumn ItemColumn {
                 get {
-                    return this.columnItem_Name;
+                    return this.columnItem;
                 }
             }
             
@@ -1240,6 +1242,14 @@ namespace POSeidon {
             public global::System.Data.DataColumn DescriptionColumn {
                 get {
                     return this.columnDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
                 }
             }
             
@@ -1280,14 +1290,15 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InventoryTableRow AddInventoryTableRow(string Item_Name, decimal Price, string SKU, string Description) {
+            public InventoryTableRow AddInventoryTableRow(string Item, decimal Price, string SKU, string Description, int Quantity) {
                 InventoryTableRow rowInventoryTableRow = ((InventoryTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Item_Name,
+                        Item,
                         Price,
                         SKU,
-                        Description};
+                        Description,
+                        Quantity};
                 rowInventoryTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInventoryTableRow);
                 return rowInventoryTableRow;
@@ -1318,10 +1329,11 @@ namespace POSeidon {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnItem_Name = base.Columns["Item Name"];
+                this.columnItem = base.Columns["Item"];
                 this.columnPrice = base.Columns["Price"];
                 this.columnSKU = base.Columns["SKU"];
                 this.columnDescription = base.Columns["Description"];
+                this.columnQuantity = base.Columns["Quantity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1329,14 +1341,20 @@ namespace POSeidon {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnItem_Name = new global::System.Data.DataColumn("Item Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnItem_Name);
+                this.columnItem = new global::System.Data.DataColumn("Item", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnItem.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Item");
+                this.columnItem.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "ItemColumn");
+                this.columnItem.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnItem");
+                this.columnItem.ExtendedProperties.Add("Generator_UserColumnName", "Item");
+                base.Columns.Add(this.columnItem);
                 this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrice);
                 this.columnSKU = new global::System.Data.DataColumn("SKU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSKU);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1344,7 +1362,7 @@ namespace POSeidon {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnItem_Name.MaxLength = 255;
+                this.columnItem.MaxLength = 255;
                 this.columnSKU.MaxLength = 255;
                 this.columnDescription.MaxLength = 536870910;
             }
@@ -1769,7 +1787,7 @@ namespace POSeidon {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Sales_HistoryDataTable : global::System.Data.TypedTableBase<Sales_HistoryRow> {
+        public partial class SalesHistoryDataTable : global::System.Data.TypedTableBase<SalesHistoryRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -1783,8 +1801,8 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sales_HistoryDataTable() {
-                this.TableName = "Sales History";
+            public SalesHistoryDataTable() {
+                this.TableName = "SalesHistory";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1792,7 +1810,7 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal Sales_HistoryDataTable(global::System.Data.DataTable table) {
+            internal SalesHistoryDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1809,7 +1827,7 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected Sales_HistoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SalesHistoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1865,56 +1883,56 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sales_HistoryRow this[int index] {
+            public SalesHistoryRow this[int index] {
                 get {
-                    return ((Sales_HistoryRow)(this.Rows[index]));
+                    return ((SalesHistoryRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Sales_HistoryRowChangeEventHandler Sales_HistoryRowChanging;
+            public event SalesHistoryRowChangeEventHandler SalesHistoryRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Sales_HistoryRowChangeEventHandler Sales_HistoryRowChanged;
+            public event SalesHistoryRowChangeEventHandler SalesHistoryRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Sales_HistoryRowChangeEventHandler Sales_HistoryRowDeleting;
+            public event SalesHistoryRowChangeEventHandler SalesHistoryRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Sales_HistoryRowChangeEventHandler Sales_HistoryRowDeleted;
+            public event SalesHistoryRowChangeEventHandler SalesHistoryRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddSales_HistoryRow(Sales_HistoryRow row) {
+            public void AddSalesHistoryRow(SalesHistoryRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sales_HistoryRow AddSales_HistoryRow(string Item_Name, decimal Price, string SKU, string Customer) {
-                Sales_HistoryRow rowSales_HistoryRow = ((Sales_HistoryRow)(this.NewRow()));
+            public SalesHistoryRow AddSalesHistoryRow(string Item_Name, decimal Price, string SKU, string Customer) {
+                SalesHistoryRow rowSalesHistoryRow = ((SalesHistoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Item_Name,
                         Price,
                         SKU,
                         Customer};
-                rowSales_HistoryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSales_HistoryRow);
-                return rowSales_HistoryRow;
+                rowSalesHistoryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSalesHistoryRow);
+                return rowSalesHistoryRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sales_HistoryRow FindByID(int ID) {
-                return ((Sales_HistoryRow)(this.Rows.Find(new object[] {
+            public SalesHistoryRow FindByID(int ID) {
+                return ((SalesHistoryRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Sales_HistoryDataTable cln = ((Sales_HistoryDataTable)(base.Clone()));
+                SalesHistoryDataTable cln = ((SalesHistoryDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1922,7 +1940,7 @@ namespace POSeidon {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Sales_HistoryDataTable();
+                return new SalesHistoryDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1962,28 +1980,28 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sales_HistoryRow NewSales_HistoryRow() {
-                return ((Sales_HistoryRow)(this.NewRow()));
+            public SalesHistoryRow NewSalesHistoryRow() {
+                return ((SalesHistoryRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Sales_HistoryRow(builder);
+                return new SalesHistoryRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Sales_HistoryRow);
+                return typeof(SalesHistoryRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Sales_HistoryRowChanged != null)) {
-                    this.Sales_HistoryRowChanged(this, new Sales_HistoryRowChangeEvent(((Sales_HistoryRow)(e.Row)), e.Action));
+                if ((this.SalesHistoryRowChanged != null)) {
+                    this.SalesHistoryRowChanged(this, new SalesHistoryRowChangeEvent(((SalesHistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1991,8 +2009,8 @@ namespace POSeidon {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Sales_HistoryRowChanging != null)) {
-                    this.Sales_HistoryRowChanging(this, new Sales_HistoryRowChangeEvent(((Sales_HistoryRow)(e.Row)), e.Action));
+                if ((this.SalesHistoryRowChanging != null)) {
+                    this.SalesHistoryRowChanging(this, new SalesHistoryRowChangeEvent(((SalesHistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2000,8 +2018,8 @@ namespace POSeidon {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Sales_HistoryRowDeleted != null)) {
-                    this.Sales_HistoryRowDeleted(this, new Sales_HistoryRowChangeEvent(((Sales_HistoryRow)(e.Row)), e.Action));
+                if ((this.SalesHistoryRowDeleted != null)) {
+                    this.SalesHistoryRowDeleted(this, new SalesHistoryRowChangeEvent(((SalesHistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2009,14 +2027,14 @@ namespace POSeidon {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Sales_HistoryRowDeleting != null)) {
-                    this.Sales_HistoryRowDeleting(this, new Sales_HistoryRowChangeEvent(((Sales_HistoryRow)(e.Row)), e.Action));
+                if ((this.SalesHistoryRowDeleting != null)) {
+                    this.SalesHistoryRowDeleting(this, new SalesHistoryRowChangeEvent(((SalesHistoryRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveSales_HistoryRow(Sales_HistoryRow row) {
+            public void RemoveSalesHistoryRow(SalesHistoryRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2043,7 +2061,7 @@ namespace POSeidon {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Sales_HistoryDataTable";
+                attribute2.FixedValue = "SalesHistoryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2117,7 +2135,7 @@ namespace POSeidon {
                         return ((string)(this[this.tableCustomerTable.First_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'First Name\' in table \'CustomerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'First_Name\' in table \'CustomerTable\' is DBNull.", e);
                     }
                 }
                 set {
@@ -2133,7 +2151,7 @@ namespace POSeidon {
                         return ((string)(this[this.tableCustomerTable.Last_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Last Name\' in table \'CustomerTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Last_Name\' in table \'CustomerTable\' is DBNull.", e);
                     }
                 }
                 set {
@@ -2583,17 +2601,17 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Item_Name {
+            public string Item {
                 get {
                     try {
-                        return ((string)(this[this.tableInventoryTable.Item_NameColumn]));
+                        return ((string)(this[this.tableInventoryTable.ItemColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Item Name\' in table \'InventoryTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Item\' in table \'InventoryTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableInventoryTable.Item_NameColumn] = value;
+                    this[this.tableInventoryTable.ItemColumn] = value;
                 }
             }
             
@@ -2647,14 +2665,30 @@ namespace POSeidon {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsItem_NameNull() {
-                return this.IsNull(this.tableInventoryTable.Item_NameColumn);
+            public int Quantity {
+                get {
+                    try {
+                        return ((int)(this[this.tableInventoryTable.QuantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'InventoryTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventoryTable.QuantityColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetItem_NameNull() {
-                this[this.tableInventoryTable.Item_NameColumn] = global::System.Convert.DBNull;
+            public bool IsItemNull() {
+                return this.IsNull(this.tableInventoryTable.ItemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetItemNull() {
+                this[this.tableInventoryTable.ItemColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2691,6 +2725,18 @@ namespace POSeidon {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDescriptionNull() {
                 this[this.tableInventoryTable.DescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsQuantityNull() {
+                return this.IsNull(this.tableInventoryTable.QuantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetQuantityNull() {
+                this[this.tableInventoryTable.QuantityColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2779,25 +2825,25 @@ namespace POSeidon {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Sales_HistoryRow : global::System.Data.DataRow {
+        public partial class SalesHistoryRow : global::System.Data.DataRow {
             
-            private Sales_HistoryDataTable tableSales_History;
+            private SalesHistoryDataTable tableSalesHistory;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal Sales_HistoryRow(global::System.Data.DataRowBuilder rb) : 
+            internal SalesHistoryRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSales_History = ((Sales_HistoryDataTable)(this.Table));
+                this.tableSalesHistory = ((SalesHistoryDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int ID {
                 get {
-                    return ((int)(this[this.tableSales_History.IDColumn]));
+                    return ((int)(this[this.tableSalesHistory.IDColumn]));
                 }
                 set {
-                    this[this.tableSales_History.IDColumn] = value;
+                    this[this.tableSalesHistory.IDColumn] = value;
                 }
             }
             
@@ -2806,14 +2852,14 @@ namespace POSeidon {
             public string Item_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableSales_History.Item_NameColumn]));
+                        return ((string)(this[this.tableSalesHistory.Item_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Item Name\' in table \'Sales History\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Item Name\' in table \'SalesHistory\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSales_History.Item_NameColumn] = value;
+                    this[this.tableSalesHistory.Item_NameColumn] = value;
                 }
             }
             
@@ -2822,14 +2868,14 @@ namespace POSeidon {
             public decimal Price {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSales_History.PriceColumn]));
+                        return ((decimal)(this[this.tableSalesHistory.PriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'Sales History\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'SalesHistory\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSales_History.PriceColumn] = value;
+                    this[this.tableSalesHistory.PriceColumn] = value;
                 }
             }
             
@@ -2838,14 +2884,14 @@ namespace POSeidon {
             public string SKU {
                 get {
                     try {
-                        return ((string)(this[this.tableSales_History.SKUColumn]));
+                        return ((string)(this[this.tableSalesHistory.SKUColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKU\' in table \'Sales History\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKU\' in table \'SalesHistory\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSales_History.SKUColumn] = value;
+                    this[this.tableSalesHistory.SKUColumn] = value;
                 }
             }
             
@@ -2854,63 +2900,63 @@ namespace POSeidon {
             public string Customer {
                 get {
                     try {
-                        return ((string)(this[this.tableSales_History.CustomerColumn]));
+                        return ((string)(this[this.tableSalesHistory.CustomerColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Customer\' in table \'Sales History\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Customer\' in table \'SalesHistory\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSales_History.CustomerColumn] = value;
+                    this[this.tableSalesHistory.CustomerColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsItem_NameNull() {
-                return this.IsNull(this.tableSales_History.Item_NameColumn);
+                return this.IsNull(this.tableSalesHistory.Item_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetItem_NameNull() {
-                this[this.tableSales_History.Item_NameColumn] = global::System.Convert.DBNull;
+                this[this.tableSalesHistory.Item_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsPriceNull() {
-                return this.IsNull(this.tableSales_History.PriceColumn);
+                return this.IsNull(this.tableSalesHistory.PriceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPriceNull() {
-                this[this.tableSales_History.PriceColumn] = global::System.Convert.DBNull;
+                this[this.tableSalesHistory.PriceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSKUNull() {
-                return this.IsNull(this.tableSales_History.SKUColumn);
+                return this.IsNull(this.tableSalesHistory.SKUColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSKUNull() {
-                this[this.tableSales_History.SKUColumn] = global::System.Convert.DBNull;
+                this[this.tableSalesHistory.SKUColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCustomerNull() {
-                return this.IsNull(this.tableSales_History.CustomerColumn);
+                return this.IsNull(this.tableSalesHistory.CustomerColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCustomerNull() {
-                this[this.tableSales_History.CustomerColumn] = global::System.Convert.DBNull;
+                this[this.tableSalesHistory.CustomerColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3054,22 +3100,22 @@ namespace POSeidon {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class Sales_HistoryRowChangeEvent : global::System.EventArgs {
+        public class SalesHistoryRowChangeEvent : global::System.EventArgs {
             
-            private Sales_HistoryRow eventRow;
+            private SalesHistoryRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sales_HistoryRowChangeEvent(Sales_HistoryRow row, global::System.Data.DataRowAction action) {
+            public SalesHistoryRowChangeEvent(SalesHistoryRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sales_HistoryRow Row {
+            public SalesHistoryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3097,7 +3143,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CustomerTableAdapter : global::System.ComponentModel.Component {
+    public partial class CustomerTableTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -3111,7 +3157,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public CustomerTableAdapter() {
+        public CustomerTableTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3210,8 +3256,8 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "CustomerTable";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("First Name", "First Name");
-            tableMapping.ColumnMappings.Add("Last Name", "Last Name");
+            tableMapping.ColumnMappings.Add("First_Name", "First_Name");
+            tableMapping.ColumnMappings.Add("Last_Name", "Last_Name");
             tableMapping.ColumnMappings.Add("Address", "Address");
             tableMapping.ColumnMappings.Add("Phone", "Phone");
             tableMapping.ColumnMappings.Add("Email", "Email");
@@ -3219,43 +3265,43 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `CustomerTable` WHERE ((`ID` = ?) AND ((? = 1 AND `First Name` IS NULL) OR (`First Name` = ?)) AND ((? = 1 AND `Last Name` IS NULL) OR (`Last Name` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR (`Phone` = ?)) AND ((? = 1 AND `Loyalty` IS NULL) OR (`Loyalty` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `CustomerTable` WHERE ((`ID` = ?) AND ((? = 1 AND `First_Name` IS NULL) OR (`First_Name` = ?)) AND ((? = 1 AND `Last_Name` IS NULL) OR (`Last_Name` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR (`Phone` = ?)) AND ((? = 1 AND `Loyalty` IS NULL) OR (`Loyalty` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_First_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Last_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_First_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Last_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Phone", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Phone", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Phone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Phone", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Loyalty", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Loyalty", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Loyalty", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Loyalty", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `CustomerTable` (`First Name`, `Last Name`, `Address`, `Phone`, `Emai" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `CustomerTable` (`First_Name`, `Last_Name`, `Address`, `Phone`, `Emai" +
                 "l`, `Loyalty`) VALUES (?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Address", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Address", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Phone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Phone", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Loyalty", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Loyalty", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `CustomerTable` SET `First Name` = ?, `Last Name` = ?, `Address` = ?, `Phone` = ?, `Email` = ?, `Loyalty` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `First Name` IS NULL) OR (`First Name` = ?)) AND ((? = 1 AND `Last Name` IS NULL) OR (`Last Name` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR (`Phone` = ?)) AND ((? = 1 AND `Loyalty` IS NULL) OR (`Loyalty` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `CustomerTable` SET `First_Name` = ?, `Last_Name` = ?, `Address` = ?, `Phone` = ?, `Email` = ?, `Loyalty` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `First_Name` IS NULL) OR (`First_Name` = ?)) AND ((? = 1 AND `Last_Name` IS NULL) OR (`Last_Name` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR (`Phone` = ?)) AND ((? = 1 AND `Loyalty` IS NULL) OR (`Loyalty` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Address", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Address", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Phone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Phone", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Loyalty", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Loyalty", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_First_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Last_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_First_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Last_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Phone", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Phone", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Phone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Phone", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Loyalty", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Loyalty", global::System.Data.DataRowVersion.Original, true, null));
@@ -3272,23 +3318,12 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [First Name], [Last Name], Address, Phone, Email, Loyalty FROM Custome" +
-                "rTable";
+            this._commandCollection[0].CommandText = "SELECT ID, First_Name, Last_Name, Address, Phone, Email, Loyalty FROM CustomerTab" +
+                "le";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO `CustomerTable` (`First Name`, `Last Name`, `Address`, `Phone`, `Emai" +
-                "l`, `Loyalty`) VALUES (?, ?, ?, ?, ?, ?)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Address", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Address", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Phone", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Phone", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Loyalty", global::System.Data.OleDb.OleDbType.Boolean, 2, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Loyalty", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3521,60 +3556,6 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int AddCustomer(string First_Name, string Last_Name, string Address, string Phone, string Email, bool Loyalty) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            if ((First_Name == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(First_Name));
-            }
-            if ((Last_Name == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Last_Name));
-            }
-            if ((Address == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Address));
-            }
-            if ((Phone == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(Phone));
-            }
-            if ((Email == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[4].Value = ((string)(Email));
-            }
-            command.Parameters[5].Value = ((bool)(Loyalty));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
     }
     
@@ -4224,48 +4205,56 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "InventoryTable";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Item Name", "Item Name");
+            tableMapping.ColumnMappings.Add("Item", "Item");
             tableMapping.ColumnMappings.Add("Price", "Price");
             tableMapping.ColumnMappings.Add("SKU", "SKU");
             tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `InventoryTable` WHERE ((`ID` = ?) AND ((? = 1 AND `Item Name` IS NUL" +
-                "L) OR (`Item Name` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND " +
-                "((? = 1 AND `SKU` IS NULL) OR (`SKU` = ?)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `InventoryTable` WHERE ((`ID` = ?) AND ((? = 1 AND `Item` IS NULL) OR" +
+                " (`Item` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1 AN" +
+                "D `SKU` IS NULL) OR (`SKU` = ?)) AND ((? = 1 AND `Quantity` IS NULL) OR (`Quanti" +
+                "ty` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Item_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Item_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Item", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Item", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Price", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Price", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_SKU", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SKU", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SKU", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SKU", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Quantity", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quantity", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Quantity", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quantity", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `InventoryTable` (`Item Name`, `Price`, `SKU`, `Description`) VALUES " +
-                "(?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `InventoryTable` (`Item`, `Price`, `SKU`, `Description`, `Quantity`) " +
+                "VALUES (?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Item_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Item", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Price", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SKU", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SKU", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Description", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Quantity", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quantity", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `InventoryTable` SET `Item Name` = ?, `Price` = ?, `SKU` = ?, `Description` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Item Name` IS NULL) OR (`Item Name` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1 AND `SKU` IS NULL) OR (`SKU` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `InventoryTable` SET `Item` = ?, `Price` = ?, `SKU` = ?, `Description` = ?, `Quantity` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Item` IS NULL) OR (`Item` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1 AND `SKU` IS NULL) OR (`SKU` = ?)) AND ((? = 1 AND `Quantity` IS NULL) OR (`Quantity` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Item_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Item", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Price", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SKU", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SKU", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Description", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Quantity", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quantity", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Item_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Item_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Item", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Item", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Price", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Price", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_SKU", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SKU", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SKU", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SKU", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Quantity", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quantity", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Quantity", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quantity", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4281,7 +4270,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [Item Name], Price, SKU, Description FROM InventoryTable";
+            this._commandCollection[0].CommandText = "SELECT ID, Item, Price, SKU, Description, Quantity FROM InventoryTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4342,15 +4331,15 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Item_Name, global::System.Nullable<decimal> Original_Price, string Original_SKU) {
+        public virtual int Delete(int Original_ID, string Original_Item, global::System.Nullable<decimal> Original_Price, string Original_SKU, global::System.Nullable<int> Original_Quantity) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_Item_Name == null)) {
+            if ((Original_Item == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Item_Name));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Item));
             }
             if ((Original_Price.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
@@ -4367,6 +4356,14 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_SKU));
+            }
+            if ((Original_Quantity.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Quantity.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4388,12 +4385,12 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Item_Name, global::System.Nullable<decimal> Price, string SKU, string Description) {
-            if ((Item_Name == null)) {
+        public virtual int Insert(string Item, global::System.Nullable<decimal> Price, string SKU, string Description, global::System.Nullable<int> Quantity) {
+            if ((Item == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Item_Name));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Item));
             }
             if ((Price.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(Price.Value));
@@ -4412,6 +4409,12 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Description));
+            }
+            if ((Quantity.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4433,12 +4436,12 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Item_Name, global::System.Nullable<decimal> Price, string SKU, string Description, int Original_ID, string Original_Item_Name, global::System.Nullable<decimal> Original_Price, string Original_SKU) {
-            if ((Item_Name == null)) {
+        public virtual int Update(string Item, global::System.Nullable<decimal> Price, string SKU, string Description, global::System.Nullable<int> Quantity, int Original_ID, string Original_Item, global::System.Nullable<decimal> Original_Price, string Original_SKU, global::System.Nullable<int> Original_Quantity) {
+            if ((Item == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Item_Name));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Item));
             }
             if ((Price.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(Price.Value));
@@ -4458,30 +4461,44 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Description));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID));
-            if ((Original_Item_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((Quantity.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Item_Name));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID));
+            if ((Original_Item == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Item));
             }
             if ((Original_Price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_Price.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_Price.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_SKU == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_SKU));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_SKU));
+            }
+            if ((Original_Quantity.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Quantity.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4857,7 +4874,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Sales_HistoryTableAdapter : global::System.ComponentModel.Component {
+    public partial class SalesHistoryTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -4871,7 +4888,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Sales_HistoryTableAdapter() {
+        public SalesHistoryTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4968,7 +4985,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Sales History";
+            tableMapping.DataSetTable = "SalesHistory";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Item Name", "Item Name");
             tableMapping.ColumnMappings.Add("Price", "Price");
@@ -4977,9 +4994,9 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Sales History` WHERE ((`ID` = ?) AND ((? = 1 AND `Item Name` IS NULL" +
-                ") OR (`Item Name` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND (" +
-                "(? = 1 AND `SKU` IS NULL) OR (`SKU` = ?)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `SalesHistory` WHERE ((`ID` = ?) AND ((? = 1 AND `Item Name` IS NULL)" +
+                " OR (`Item Name` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((" +
+                "? = 1 AND `SKU` IS NULL) OR (`SKU` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Item_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Original, true, null));
@@ -4990,8 +5007,8 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SKU", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SKU", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Sales History` (`Item Name`, `Price`, `SKU`, `Customer`) VALUES (?, " +
-                "?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `SalesHistory` (`Item Name`, `Price`, `SKU`, `Customer`) VALUES (?, ?" +
+                ", ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Item_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Price", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Current, false, null));
@@ -4999,7 +5016,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Customer", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Customer", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Sales History` SET `Item Name` = ?, `Price` = ?, `SKU` = ?, `Customer` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Item Name` IS NULL) OR (`Item Name` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1 AND `SKU` IS NULL) OR (`SKU` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `SalesHistory` SET `Item Name` = ?, `Price` = ?, `SKU` = ?, `Customer` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Item Name` IS NULL) OR (`Item Name` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1 AND `SKU` IS NULL) OR (`SKU` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Item_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Item Name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Price", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Current, false, null));
@@ -5024,22 +5041,18 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [Item Name], Price, SKU, Customer FROM [Sales History]";
+            this._commandCollection[0].CommandText = "SELECT ID, [Item Name], Price, SKU, Customer FROM SalesHistory";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT * FROM [Sales History]";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(POSeidonDataSet.Sales_HistoryDataTable dataTable) {
+        public virtual int Fill(POSeidonDataSet.SalesHistoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5052,9 +5065,9 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual POSeidonDataSet.Sales_HistoryDataTable GetData() {
+        public virtual POSeidonDataSet.SalesHistoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            POSeidonDataSet.Sales_HistoryDataTable dataTable = new POSeidonDataSet.Sales_HistoryDataTable();
+            POSeidonDataSet.SalesHistoryDataTable dataTable = new POSeidonDataSet.SalesHistoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5062,31 +5075,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(POSeidonDataSet.Sales_HistoryDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual POSeidonDataSet.Sales_HistoryDataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            POSeidonDataSet.Sales_HistoryDataTable dataTable = new POSeidonDataSet.Sales_HistoryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(POSeidonDataSet.Sales_HistoryDataTable dataTable) {
+        public virtual int Update(POSeidonDataSet.SalesHistoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -5094,7 +5083,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(POSeidonDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Sales History");
+            return this.Adapter.Update(dataSet, "SalesHistory");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5286,7 +5275,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private CustomerTableAdapter _customerTableAdapter;
+        private CustomerTableTableAdapter _customerTableTableAdapter;
         
         private EmployeeTableTableAdapter _employeeTableTableAdapter;
         
@@ -5294,7 +5283,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         
         private LoginTableTableAdapter _loginTableTableAdapter;
         
-        private Sales_HistoryTableAdapter _sales_HistoryTableAdapter;
+        private SalesHistoryTableAdapter _salesHistoryTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5316,12 +5305,12 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public CustomerTableAdapter CustomerTableAdapter {
+        public CustomerTableTableAdapter CustomerTableTableAdapter {
             get {
-                return this._customerTableAdapter;
+                return this._customerTableTableAdapter;
             }
             set {
-                this._customerTableAdapter = value;
+                this._customerTableTableAdapter = value;
             }
         }
         
@@ -5372,12 +5361,12 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Sales_HistoryTableAdapter Sales_HistoryTableAdapter {
+        public SalesHistoryTableAdapter SalesHistoryTableAdapter {
             get {
-                return this._sales_HistoryTableAdapter;
+                return this._salesHistoryTableAdapter;
             }
             set {
-                this._sales_HistoryTableAdapter = value;
+                this._salesHistoryTableAdapter = value;
             }
         }
         
@@ -5400,9 +5389,9 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._customerTableAdapter != null) 
-                            && (this._customerTableAdapter.Connection != null))) {
-                    return this._customerTableAdapter.Connection;
+                if (((this._customerTableTableAdapter != null) 
+                            && (this._customerTableTableAdapter.Connection != null))) {
+                    return this._customerTableTableAdapter.Connection;
                 }
                 if (((this._employeeTableTableAdapter != null) 
                             && (this._employeeTableTableAdapter.Connection != null))) {
@@ -5416,9 +5405,9 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                             && (this._loginTableTableAdapter.Connection != null))) {
                     return this._loginTableTableAdapter.Connection;
                 }
-                if (((this._sales_HistoryTableAdapter != null) 
-                            && (this._sales_HistoryTableAdapter.Connection != null))) {
-                    return this._sales_HistoryTableAdapter.Connection;
+                if (((this._salesHistoryTableAdapter != null) 
+                            && (this._salesHistoryTableAdapter.Connection != null))) {
+                    return this._salesHistoryTableAdapter.Connection;
                 }
                 return null;
             }
@@ -5433,7 +5422,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._customerTableAdapter != null)) {
+                if ((this._customerTableTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._employeeTableTableAdapter != null)) {
@@ -5445,7 +5434,7 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                 if ((this._loginTableTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._sales_HistoryTableAdapter != null)) {
+                if ((this._salesHistoryTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -5459,12 +5448,12 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(POSeidonDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._customerTableAdapter != null)) {
+            if ((this._customerTableTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.CustomerTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._customerTableAdapter.Update(updatedRows));
+                    result = (result + this._customerTableTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5495,12 +5484,12 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sales_HistoryTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Sales_History.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._salesHistoryTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SalesHistory.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sales_HistoryTableAdapter.Update(updatedRows));
+                    result = (result + this._salesHistoryTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5514,11 +5503,11 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(POSeidonDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._customerTableAdapter != null)) {
+            if ((this._customerTableTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.CustomerTable.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._customerTableAdapter.Update(addedRows));
+                    result = (result + this._customerTableTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5546,11 +5535,11 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sales_HistoryTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Sales_History.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._salesHistoryTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SalesHistory.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sales_HistoryTableAdapter.Update(addedRows));
+                    result = (result + this._salesHistoryTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5564,11 +5553,11 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(POSeidonDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._sales_HistoryTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Sales_History.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._salesHistoryTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SalesHistory.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sales_HistoryTableAdapter.Update(deletedRows));
+                    result = (result + this._salesHistoryTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5596,11 +5585,11 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._customerTableAdapter != null)) {
+            if ((this._customerTableTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.CustomerTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._customerTableAdapter.Update(deletedRows));
+                    result = (result + this._customerTableTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5643,8 +5632,8 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._customerTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._customerTableAdapter.Connection) == false))) {
+            if (((this._customerTableTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._customerTableTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -5663,8 +5652,8 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._sales_HistoryTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sales_HistoryTableAdapter.Connection) == false))) {
+            if (((this._salesHistoryTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._salesHistoryTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -5700,13 +5689,13 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._customerTableAdapter != null)) {
-                    revertConnections.Add(this._customerTableAdapter, this._customerTableAdapter.Connection);
-                    this._customerTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._customerTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._customerTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._customerTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._customerTableAdapter.Adapter);
+                if ((this._customerTableTableAdapter != null)) {
+                    revertConnections.Add(this._customerTableTableAdapter, this._customerTableTableAdapter.Connection);
+                    this._customerTableTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._customerTableTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._customerTableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._customerTableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._customerTableTableAdapter.Adapter);
                     }
                 }
                 if ((this._employeeTableTableAdapter != null)) {
@@ -5736,13 +5725,13 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._loginTableTableAdapter.Adapter);
                     }
                 }
-                if ((this._sales_HistoryTableAdapter != null)) {
-                    revertConnections.Add(this._sales_HistoryTableAdapter, this._sales_HistoryTableAdapter.Connection);
-                    this._sales_HistoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._sales_HistoryTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._sales_HistoryTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sales_HistoryTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sales_HistoryTableAdapter.Adapter);
+                if ((this._salesHistoryTableAdapter != null)) {
+                    revertConnections.Add(this._salesHistoryTableAdapter, this._salesHistoryTableAdapter.Connection);
+                    this._salesHistoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._salesHistoryTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._salesHistoryTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._salesHistoryTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._salesHistoryTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5803,9 +5792,9 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._customerTableAdapter != null)) {
-                    this._customerTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._customerTableAdapter]));
-                    this._customerTableAdapter.Transaction = null;
+                if ((this._customerTableTableAdapter != null)) {
+                    this._customerTableTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._customerTableTableAdapter]));
+                    this._customerTableTableAdapter.Transaction = null;
                 }
                 if ((this._employeeTableTableAdapter != null)) {
                     this._employeeTableTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._employeeTableTableAdapter]));
@@ -5819,9 +5808,9 @@ namespace POSeidon.POSeidonDataSetTableAdapters {
                     this._loginTableTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._loginTableTableAdapter]));
                     this._loginTableTableAdapter.Transaction = null;
                 }
-                if ((this._sales_HistoryTableAdapter != null)) {
-                    this._sales_HistoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._sales_HistoryTableAdapter]));
-                    this._sales_HistoryTableAdapter.Transaction = null;
+                if ((this._salesHistoryTableAdapter != null)) {
+                    this._salesHistoryTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._salesHistoryTableAdapter]));
+                    this._salesHistoryTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

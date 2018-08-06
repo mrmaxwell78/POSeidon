@@ -169,6 +169,7 @@
             this.Controls.Add(this.lblCustomerLastName);
             this.Controls.Add(this.lblCustomerFirstName);
             this.Name = "frmNewCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Customer";
             this.ResumeLayout(false);
             this.PerformLayout();

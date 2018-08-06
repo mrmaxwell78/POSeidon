@@ -25,32 +25,38 @@ namespace POSeidon
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             bool loyal = loyaltyStatus();
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
 
-            connection.Open();
-            OleDbCommand command = new OleDbCommand();
-            command.Connection = connection;
+                command.CommandText = "INSERT into CustomerTable ([First_Name], [Last_Name], Address, Phone, Email, Loyalty) VALUES (@First_Name, @Last_Name, @Address, @Phone, @Email, @Loyalty)";
+                command.Parameters.Add("@First_Name", OleDbType.VarChar, 15).Value = txtNewCustomerFirst.Text;
+                command.Parameters.Add("@Last_Name", OleDbType.VarChar, 15).Value = txtNewCustomerLast.Text;
+                command.Parameters.Add("@Address", OleDbType.VarChar, 50).Value = txtNewCustomerAddress.Text;
+                command.Parameters.Add("@Phone", OleDbType.VarChar, 10).Value = txtNewCustomerPhone.Text;
+                command.Parameters.Add("@Email", OleDbType.VarChar, 25).Value = txtNewCustomerEmail.Text;
+                command.Parameters.Add("@Loyalty", OleDbType.Boolean).Value = loyal;
 
-            command.CommandText = "INSERT into CustomerTable (First Name, Last Name, Address, Phone, Email, Loyalty) VALUES (@First Name, @Last Name, @Address, @Phone, @Email, @Loyalty)";
-            command.Parameters.Add("@First Name", OleDbType.VarChar, 15).Value = txtNewCustomerFirst.Text;
-            command.Parameters.Add("@Last Name", OleDbType.VarChar, 15).Value = txtNewCustomerLast.Text;
-            command.Parameters.Add("@Address", OleDbType.VarChar, 50).Value = txtNewCustomerAddress.Text;
-            command.Parameters.Add("@Phone", OleDbType.VarChar, 10).Value = txtNewCustomerPhone.Text;
-            command.Parameters.Add("@Email", OleDbType.VarChar, 25).Value = txtNewCustomerEmail.Text;
-            command.Parameters.Add("@Loyalty", OleDbType.Boolean).Value = loyal;
+                command.ExecuteNonQuery();
 
-            command.ExecuteNonQuery();
+                data.tempCust.FirstName = txtNewCustomerFirst.Text;
+                data.tempCust.LastName = txtNewCustomerLast.Text;
+                data.tempCust.Address1 = txtNewCustomerAddress.Text;
+                data.tempCust.Phone1 = txtNewCustomerPhone.Text;
+                data.tempCust.Email1 = txtNewCustomerEmail.Text;
+                data.tempCust.Loyal = loyal;
 
-            data.tempCust.FirstName = txtNewCustomerFirst.Text;
-            data.tempCust.LastName = txtNewCustomerLast.Text;
-            data.tempCust.Address1 = txtNewCustomerAddress.Text;
-            data.tempCust.Phone1 = txtNewCustomerPhone.Text;
-            data.tempCust.Email1 = txtNewCustomerEmail.Text;
-            data.tempCust.Loyal = loyal;
+                data.cusList.Add(data.tempCust);
 
-            data.cusList.Add(data.tempCust);
+                connection.Close();
 
-            command.Connection.Close();
-            connection.Close();
+                MessageBox.Show("Added");
+
+                this.Close();
+            }
+            catch (Exception) { }
         }
 
         private bool loyaltyStatus()

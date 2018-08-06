@@ -117,7 +117,8 @@ namespace POSeidon
                 DataTable dataTable = new DataTable();
                 oleDbDataAdapter.Fill(dataTable);
                 dgvEmployee.DataSource = dataTable;
-                command.Connection.Close();
+                
+               
                 connection.Close();
             }
             catch (Exception) { }
@@ -130,14 +131,14 @@ namespace POSeidon
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                string query = "Select * from Sales History";
+                string query = "Select * from SalesHistory";
                 command.CommandText = query;
 
                 OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 oleDbDataAdapter.Fill(dataTable);
                 dgvSalesHistory.DataSource = dataTable;
-                command.Connection.Close();
+               
                 connection.Close();
             }
             catch (Exception) { }
@@ -150,14 +151,14 @@ namespace POSeidon
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                string query = "Select * from IventoryTable";
+                string query = "SELECT * from InventoryTable";
                 command.CommandText = query;
 
                 OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 oleDbDataAdapter.Fill(dataTable);
                 dgvInventory.DataSource = dataTable;
-                command.Connection.Close();
+                
                 connection.Close();
             }
             catch (Exception) { }
@@ -210,6 +211,50 @@ namespace POSeidon
             frmNewCustomer customer = new frmNewCustomer();
             customer.Show();
             
+        }
+
+        private void frmPOS_Load(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            frmInventory item = new frmInventory();
+            item.Show();
+        }
+
+        private void btnReloadInventory_Click(object sender, EventArgs e)
+        {
+            loadInventory();
+        }
+
+        private void txtSales_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSales.Text;
+
+            if(searchText != String.Empty)
+            {
+                try
+                {
+                    connection.Open();
+
+                    OleDbCommand command = new OleDbCommand();
+                    command.Connection = connection;
+
+                    command.CommandText = @"SELECT Item FROM InventoryTable WHERE id = Item LIKE '@searchText%'";
+                    command.Parameters.Add("@searchText", OleDbType.VarChar, 50).Value = searchText;
+
+                    command.ExecuteNonQuery();
+
+                    lstSale.DataSource = inventoryTableTableAdapter1;
+                    lstSale.DisplayMember = "Item" + "Price";
+          
+                }
+
+                catch (Exception) { }
+            }
+            connection.Close();
         }
     }
 }

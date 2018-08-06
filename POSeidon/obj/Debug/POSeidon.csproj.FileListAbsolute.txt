@@ -34,3 +34,5 @@ C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.csproj.CoreCompileInp
 C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.exe
 C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.pdb
 C:\Users\Matt\Desktop\POSeidon\POSeidon\bin\Debug\POSeidon.accdb
+C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.frmNewCustomer.resources
+C:\Users\Matt\Desktop\POSeidon\POSeidon\obj\Debug\POSeidon.frmInventory.resources

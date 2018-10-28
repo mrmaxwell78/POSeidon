@@ -74,5 +74,9 @@ namespace POSeidon
             frmPOS.ActiveForm.Close();
         }
 
+        private void lblLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

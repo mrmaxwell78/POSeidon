@@ -129,6 +129,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="POSeidonDataSet.xsc">
       <DependentUpon>POSeidonDataSet.xsd</DependentUpon>
@@ -170,6 +171,8 @@
     <Content Include="POSeidon.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\water2.jpg" />
+    <None Include="Resources\posiedonorange2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

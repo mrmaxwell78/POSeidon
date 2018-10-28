@@ -24,8 +24,8 @@ namespace POSeidon
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            bool loyal = loyaltyStatus();
-            try
+            bool loyal = loyaltyStatus(); //convert to boolean status
+            try//try to add to the database
             {
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
@@ -48,7 +48,7 @@ namespace POSeidon
                 data.tempCust.Email1 = txtNewCustomerEmail.Text;
                 data.tempCust.Loyal = loyal;
 
-                data.cusList.Add(data.tempCust);
+                data.cusList.Add(data.tempCust);//add to customerList in data class
 
                 connection.Close();
 
@@ -70,6 +70,54 @@ namespace POSeidon
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNewCustomerFirst_Validating(object sender, CancelEventArgs e)
+        {//Check name for digits and if the textbox is empty
+            if (txtNewCustomerFirst.Text == string.Empty)//check to see if the textbox is empty
+            {
+                MessageBox.Show("Please enter a first name.");
+                e.Cancel = true;
+            }
+
+            if (txtNewCustomerFirst.Text != string.Empty)//check to see if the textbox is not empty
+            {
+                char.ToUpper(txtNewCustomerFirst.Text[0]);//if not empty, upper case the first char
+
+                for (int i = 0; i < txtNewCustomerFirst.Text.Length; i++)//itterate through the string and determine the chars are all letters
+                {
+                    if (char.IsDigit(txtNewCustomerFirst.Text[i]))//if char is a digit, show message
+                    {
+                        MessageBox.Show("Please no digits.");
+                        e.Cancel = true;
+                    }
+
+                }
+            }
+        }
+
+        private void txtNewCustomerLast_Validating(object sender, CancelEventArgs e)
+        {//Check name for digits and if the textbox is empty
+            if (txtNewCustomerLast.Text == string.Empty)//check to see if the textbox is empty
+            {
+                MessageBox.Show("Please enter a first name.");
+                e.Cancel = true;
+            }
+
+            if (txtNewCustomerLast.Text != string.Empty)//check to see if the textbox is not empty
+            {
+                char.ToUpper(txtNewCustomerLast.Text[0]);//if not empty, upper case the first char
+
+                for (int i = 0; i < txtNewCustomerLast.Text.Length; i++)//itterate through the string and determine the chars are all letters
+                {
+                    if (char.IsDigit(txtNewCustomerLast.Text[i]))//if char is a digit, show message
+                    {
+                        MessageBox.Show("Please no digits.");
+                        e.Cancel = true;
+                    }
+
+                }
+            }
         }
     }
 }

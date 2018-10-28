@@ -52,6 +52,8 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.lblAddEmp = new System.Windows.Forms.Label();
+            this.lblEmployee = new System.Windows.Forms.Label();
             this.grpStatus.SuspendLayout();
             this.grpTime.SuspendLayout();
             this.grpSales.SuspendLayout();
@@ -61,7 +63,10 @@
             // 
             // lblNewName
             // 
-            this.lblNewName.Location = new System.Drawing.Point(12, 59);
+            this.lblNewName.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewName.ForeColor = System.Drawing.Color.White;
+            this.lblNewName.Location = new System.Drawing.Point(25, 77);
             this.lblNewName.Name = "lblNewName";
             this.lblNewName.Size = new System.Drawing.Size(78, 23);
             this.lblNewName.TabIndex = 0;
@@ -69,7 +74,10 @@
             // 
             // lblNewLastName
             // 
-            this.lblNewLastName.Location = new System.Drawing.Point(12, 94);
+            this.lblNewLastName.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewLastName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewLastName.ForeColor = System.Drawing.Color.White;
+            this.lblNewLastName.Location = new System.Drawing.Point(27, 123);
             this.lblNewLastName.Name = "lblNewLastName";
             this.lblNewLastName.Size = new System.Drawing.Size(75, 23);
             this.lblNewLastName.TabIndex = 1;
@@ -77,27 +85,32 @@
             // 
             // txtNewName
             // 
-            this.txtNewName.Location = new System.Drawing.Point(84, 59);
+            this.txtNewName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewName.Location = new System.Drawing.Point(73, 75);
             this.txtNewName.Name = "txtNewName";
-            this.txtNewName.Size = new System.Drawing.Size(100, 20);
+            this.txtNewName.Size = new System.Drawing.Size(100, 25);
             this.txtNewName.TabIndex = 2;
             this.txtNewName.Validating += new System.ComponentModel.CancelEventHandler(this.txtNewName_Validating);
             // 
             // txtNewLastName
             // 
-            this.txtNewLastName.Location = new System.Drawing.Point(84, 94);
+            this.txtNewLastName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewLastName.Location = new System.Drawing.Point(73, 121);
             this.txtNewLastName.Name = "txtNewLastName";
-            this.txtNewLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtNewLastName.Size = new System.Drawing.Size(100, 25);
             this.txtNewLastName.TabIndex = 3;
             this.txtNewLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtNewLastName_Validating);
             // 
             // grpStatus
             // 
+            this.grpStatus.BackColor = System.Drawing.Color.Transparent;
             this.grpStatus.Controls.Add(this.rdoManagerNo);
             this.grpStatus.Controls.Add(this.rdoManagerYes);
-            this.grpStatus.Location = new System.Drawing.Point(15, 121);
+            this.grpStatus.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpStatus.ForeColor = System.Drawing.Color.White;
+            this.grpStatus.Location = new System.Drawing.Point(32, 171);
             this.grpStatus.Name = "grpStatus";
-            this.grpStatus.Size = new System.Drawing.Size(169, 44);
+            this.grpStatus.Size = new System.Drawing.Size(180, 44);
             this.grpStatus.TabIndex = 5;
             this.grpStatus.TabStop = false;
             this.grpStatus.Text = "Manager?";
@@ -105,9 +118,9 @@
             // rdoManagerNo
             // 
             this.rdoManagerNo.AutoSize = true;
-            this.rdoManagerNo.Location = new System.Drawing.Point(81, 21);
+            this.rdoManagerNo.Location = new System.Drawing.Point(95, 20);
             this.rdoManagerNo.Name = "rdoManagerNo";
-            this.rdoManagerNo.Size = new System.Drawing.Size(39, 17);
+            this.rdoManagerNo.Size = new System.Drawing.Size(46, 22);
             this.rdoManagerNo.TabIndex = 1;
             this.rdoManagerNo.TabStop = true;
             this.rdoManagerNo.Text = "No";
@@ -116,9 +129,9 @@
             // rdoManagerYes
             // 
             this.rdoManagerYes.AutoSize = true;
-            this.rdoManagerYes.Location = new System.Drawing.Point(7, 21);
+            this.rdoManagerYes.Location = new System.Drawing.Point(7, 19);
             this.rdoManagerYes.Name = "rdoManagerYes";
-            this.rdoManagerYes.Size = new System.Drawing.Size(43, 17);
+            this.rdoManagerYes.Size = new System.Drawing.Size(52, 22);
             this.rdoManagerYes.TabIndex = 0;
             this.rdoManagerYes.TabStop = true;
             this.rdoManagerYes.Text = "Yes";
@@ -126,22 +139,24 @@
             // 
             // grpTime
             // 
+            this.grpTime.BackColor = System.Drawing.Color.Transparent;
             this.grpTime.Controls.Add(this.rdoTimeNo);
             this.grpTime.Controls.Add(this.rdoTimeYes);
-            this.grpTime.Location = new System.Drawing.Point(15, 183);
+            this.grpTime.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpTime.ForeColor = System.Drawing.Color.White;
+            this.grpTime.Location = new System.Drawing.Point(32, 249);
             this.grpTime.Name = "grpTime";
-            this.grpTime.Size = new System.Drawing.Size(169, 44);
+            this.grpTime.Size = new System.Drawing.Size(180, 44);
             this.grpTime.TabIndex = 6;
             this.grpTime.TabStop = false;
             this.grpTime.Text = "Full Time?";
-           
             // 
             // rdoTimeNo
             // 
             this.rdoTimeNo.AutoSize = true;
-            this.rdoTimeNo.Location = new System.Drawing.Point(81, 21);
+            this.rdoTimeNo.Location = new System.Drawing.Point(95, 22);
             this.rdoTimeNo.Name = "rdoTimeNo";
-            this.rdoTimeNo.Size = new System.Drawing.Size(39, 17);
+            this.rdoTimeNo.Size = new System.Drawing.Size(46, 22);
             this.rdoTimeNo.TabIndex = 1;
             this.rdoTimeNo.TabStop = true;
             this.rdoTimeNo.Text = "No";
@@ -150,9 +165,9 @@
             // rdoTimeYes
             // 
             this.rdoTimeYes.AutoSize = true;
-            this.rdoTimeYes.Location = new System.Drawing.Point(7, 21);
+            this.rdoTimeYes.Location = new System.Drawing.Point(7, 22);
             this.rdoTimeYes.Name = "rdoTimeYes";
-            this.rdoTimeYes.Size = new System.Drawing.Size(43, 17);
+            this.rdoTimeYes.Size = new System.Drawing.Size(52, 22);
             this.rdoTimeYes.TabIndex = 0;
             this.rdoTimeYes.TabStop = true;
             this.rdoTimeYes.Text = "Yes";
@@ -160,11 +175,14 @@
             // 
             // grpSales
             // 
+            this.grpSales.BackColor = System.Drawing.Color.Transparent;
             this.grpSales.Controls.Add(this.rdoSalesNo);
             this.grpSales.Controls.Add(this.rdoSalesYes);
-            this.grpSales.Location = new System.Drawing.Point(15, 243);
+            this.grpSales.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSales.ForeColor = System.Drawing.Color.White;
+            this.grpSales.Location = new System.Drawing.Point(32, 319);
             this.grpSales.Name = "grpSales";
-            this.grpSales.Size = new System.Drawing.Size(169, 44);
+            this.grpSales.Size = new System.Drawing.Size(180, 44);
             this.grpSales.TabIndex = 7;
             this.grpSales.TabStop = false;
             this.grpSales.Text = "Sales Team?";
@@ -172,9 +190,9 @@
             // rdoSalesNo
             // 
             this.rdoSalesNo.AutoSize = true;
-            this.rdoSalesNo.Location = new System.Drawing.Point(81, 21);
+            this.rdoSalesNo.Location = new System.Drawing.Point(95, 21);
             this.rdoSalesNo.Name = "rdoSalesNo";
-            this.rdoSalesNo.Size = new System.Drawing.Size(39, 17);
+            this.rdoSalesNo.Size = new System.Drawing.Size(46, 22);
             this.rdoSalesNo.TabIndex = 1;
             this.rdoSalesNo.TabStop = true;
             this.rdoSalesNo.Text = "No";
@@ -183,9 +201,9 @@
             // rdoSalesYes
             // 
             this.rdoSalesYes.AutoSize = true;
-            this.rdoSalesYes.Location = new System.Drawing.Point(7, 21);
+            this.rdoSalesYes.Location = new System.Drawing.Point(25, 73);
             this.rdoSalesYes.Name = "rdoSalesYes";
-            this.rdoSalesYes.Size = new System.Drawing.Size(43, 17);
+            this.rdoSalesYes.Size = new System.Drawing.Size(52, 22);
             this.rdoSalesYes.TabIndex = 0;
             this.rdoSalesYes.TabStop = true;
             this.rdoSalesYes.Text = "Yes";
@@ -193,32 +211,41 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(119, 415);
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnConfirm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Location = new System.Drawing.Point(343, 335);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.Size = new System.Drawing.Size(100, 33);
             this.btnConfirm.TabIndex = 8;
             this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(235, 415);
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(343, 396);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 33);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // grpSalary
             // 
+            this.grpSalary.BackColor = System.Drawing.Color.Transparent;
             this.grpSalary.Controls.Add(this.rdoHourly);
             this.grpSalary.Controls.Add(this.rdoSalary);
-            this.grpSalary.Location = new System.Drawing.Point(15, 310);
+            this.grpSalary.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSalary.ForeColor = System.Drawing.Color.White;
+            this.grpSalary.Location = new System.Drawing.Point(32, 385);
             this.grpSalary.Name = "grpSalary";
-            this.grpSalary.Size = new System.Drawing.Size(169, 44);
+            this.grpSalary.Size = new System.Drawing.Size(180, 44);
             this.grpSalary.TabIndex = 10;
             this.grpSalary.TabStop = false;
             this.grpSalary.Text = "Payment Option?";
@@ -226,9 +253,9 @@
             // rdoHourly
             // 
             this.rdoHourly.AutoSize = true;
-            this.rdoHourly.Location = new System.Drawing.Point(81, 21);
+            this.rdoHourly.Location = new System.Drawing.Point(95, 21);
             this.rdoHourly.Name = "rdoHourly";
-            this.rdoHourly.Size = new System.Drawing.Size(55, 17);
+            this.rdoHourly.Size = new System.Drawing.Size(78, 23);
             this.rdoHourly.TabIndex = 1;
             this.rdoHourly.TabStop = true;
             this.rdoHourly.Text = "Hourly";
@@ -237,77 +264,121 @@
             // rdoSalary
             // 
             this.rdoSalary.AutoSize = true;
+            this.rdoSalary.BackColor = System.Drawing.Color.Transparent;
+            this.rdoSalary.ForeColor = System.Drawing.Color.White;
             this.rdoSalary.Location = new System.Drawing.Point(7, 21);
             this.rdoSalary.Name = "rdoSalary";
-            this.rdoSalary.Size = new System.Drawing.Size(61, 17);
+            this.rdoSalary.Size = new System.Drawing.Size(82, 23);
             this.rdoSalary.TabIndex = 0;
             this.rdoSalary.TabStop = true;
             this.rdoSalary.Text = "Weekly";
-            this.rdoSalary.UseVisualStyleBackColor = true;
+            this.rdoSalary.UseVisualStyleBackColor = false;
             this.rdoSalary.CheckedChanged += new System.EventHandler(this.rdoSalary_CheckedChanged);
             // 
             // nudWage
             // 
             this.nudWage.DecimalPlaces = 2;
-            this.nudWage.Location = new System.Drawing.Point(241, 328);
+            this.nudWage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudWage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(116)))), ((int)(((byte)(145)))));
+            this.nudWage.Location = new System.Drawing.Point(344, 181);
             this.nudWage.Maximum = new decimal(new int[] {
             15000,
             0,
             0,
             0});
             this.nudWage.Name = "nudWage";
-            this.nudWage.Size = new System.Drawing.Size(120, 20);
+            this.nudWage.Size = new System.Drawing.Size(101, 26);
             this.nudWage.TabIndex = 11;
+            this.nudWage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudWage.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // lblPay
             // 
-            this.lblPay.Location = new System.Drawing.Point(241, 287);
+            this.lblPay.BackColor = System.Drawing.Color.Transparent;
+            this.lblPay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPay.ForeColor = System.Drawing.Color.White;
+            this.lblPay.Location = new System.Drawing.Point(276, 183);
             this.lblPay.Name = "lblPay";
-            this.lblPay.Size = new System.Drawing.Size(100, 23);
+            this.lblPay.Size = new System.Drawing.Size(60, 23);
             this.lblPay.TabIndex = 12;
             this.lblPay.Text = "Wages";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(261, 174);
+            this.txtPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(345, 123);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(100, 25);
             this.txtPassword.TabIndex = 20;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(258, 142);
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
+            this.lblPassword.Location = new System.Drawing.Point(202, 123);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(84, 13);
+            this.lblPassword.Size = new System.Drawing.Size(137, 19);
             this.lblPassword.TabIndex = 19;
             this.lblPassword.Text = "Enter Password:";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(258, 94);
+            this.txtUserName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(345, 75);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtUserName.Size = new System.Drawing.Size(100, 25);
             this.txtUserName.TabIndex = 18;
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(255, 59);
+            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.White;
+            this.lblUserName.Location = new System.Drawing.Point(201, 77);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(86, 13);
+            this.lblUserName.Size = new System.Drawing.Size(138, 19);
             this.lblUserName.TabIndex = 17;
             this.lblUserName.Text = "Enter Username:";
+            // 
+            // lblAddEmp
+            // 
+            this.lblAddEmp.AutoSize = true;
+            this.lblAddEmp.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddEmp.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddEmp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lblAddEmp.Location = new System.Drawing.Point(22, 24);
+            this.lblAddEmp.Name = "lblAddEmp";
+            this.lblAddEmp.Size = new System.Drawing.Size(68, 32);
+            this.lblAddEmp.TabIndex = 21;
+            this.lblAddEmp.Text = "Add";
+            // 
+            // lblEmployee
+            // 
+            this.lblEmployee.AutoSize = true;
+            this.lblEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployee.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.ForeColor = System.Drawing.Color.White;
+            this.lblEmployee.Location = new System.Drawing.Point(82, 24);
+            this.lblEmployee.Name = "lblEmployee";
+            this.lblEmployee.Size = new System.Drawing.Size(146, 32);
+            this.lblEmployee.TabIndex = 22;
+            this.lblEmployee.Text = "Employee";
             // 
             // frmNewEmployee
             // 
             this.AcceptButton = this.btnConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::POSeidon.Properties.Resources.water2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(444, 465);
+            this.ClientSize = new System.Drawing.Size(480, 465);
+            this.Controls.Add(this.lblEmployee);
+            this.Controls.Add(this.lblAddEmp);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUserName);
@@ -324,6 +395,7 @@
             this.Controls.Add(this.txtNewName);
             this.Controls.Add(this.lblNewLastName);
             this.Controls.Add(this.lblNewName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNewEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Employee";
@@ -367,5 +439,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblAddEmp;
+        private System.Windows.Forms.Label lblEmployee;
     }
 }

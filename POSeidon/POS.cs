@@ -256,5 +256,10 @@ namespace POSeidon
             }
             
         }
+
+        private void lblEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

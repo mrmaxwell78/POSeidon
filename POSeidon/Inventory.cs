@@ -25,7 +25,7 @@ namespace POSeidon
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             try
-            {
+            { //go through and add to the table
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
@@ -51,6 +51,30 @@ namespace POSeidon
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close(); 
+        }
+
+        private void txtItemName_Validating(object sender, CancelEventArgs e)
+        {//if empty cancel
+            if (txtItemName.Text == string.Empty)
+                e.Cancel = true;
+        }
+
+        private void txtPrice_Validating(object sender, CancelEventArgs e)
+        {//if empty cancel
+            if (txtPrice.Text == string.Empty)
+                e.Cancel = true;
+        }
+
+        private void txtSKU_Validating(object sender, CancelEventArgs e)
+        {//if empty cancel
+            if (txtSKU.Text == string.Empty)
+                e.Cancel = true;
+        }
+
+        private void txtQuantity_Validating(object sender, CancelEventArgs e)
+        {//if empty cancel
+            if (txtQuantity.Text == string.Empty)
+                e.Cancel = true;
         }
     }
 }

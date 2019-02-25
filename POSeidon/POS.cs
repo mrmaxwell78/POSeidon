@@ -83,10 +83,6 @@ namespace POSeidon
 
         }
 
-        private void SaveCustomers()
-        {
-            //this is probably unneeded once Databases are working
-        }
 
         private void btnLoyalty_Click(object sender, EventArgs e)
         {//Anything else related to loyalty can go here in the information
@@ -213,10 +209,6 @@ namespace POSeidon
             
         }
 
-        private void frmPOS_Load(object sender, EventArgs e)
-        {
-         
-        }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
@@ -229,11 +221,17 @@ namespace POSeidon
             loadInventory();
         }
 
-        private void txtSales_TextChanged(object sender, EventArgs e)
-        {
-            string searchText = txtSales.Text;
 
-            if(searchText != String.Empty)
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = txtSales.Text.ToString();
+
+            if (searchText != String.Empty)
             {
                 try
                 {
@@ -242,24 +240,46 @@ namespace POSeidon
                     OleDbCommand command = new OleDbCommand();
                     command.Connection = connection;
 
-                    command.CommandText = @"SELECT Item FROM InventoryTable WHERE id = Item LIKE '@searchText%'";
+                    command.CommandText = @"SELECT Item FROM InventoryTable WHERE SKU LIKE '@searchText%' OR Item LIKE '@searchText%'";
                     command.Parameters.Add("@searchText", OleDbType.VarChar, 50).Value = searchText;
 
                     command.ExecuteNonQuery();
 
-                    lstSale.DataSource = inventoryTableTableAdapter1;
-                    lstSale.DisplayMember = "Item" + "Price";
+                    dgvSales.DataSource = inventoryTableTableAdapter1;
+
                     connection.Close();
                 }
 
                 catch (Exception) { }
             }
+        }
+
+        private void txtSales_KeyPress(object sender, KeyPressEventArgs e)
+        {
             
         }
 
-        private void lblEmployee_Click(object sender, EventArgs e)
-        {
 
+        private void frmPOS_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                string query = "Select * from InventoryTable";
+                command.CommandText = query;
+
+                OleDbDataAdapter odbAdapter = new OleDbDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                odbAdapter.Fill(dataTable);
+                dgvSales.DataSource = dataTable;
+
+                connection.Close();
+                
+            }
+
+            catch (Exception ex) { }
         }
     }
 }

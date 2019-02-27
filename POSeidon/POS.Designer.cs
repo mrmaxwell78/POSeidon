@@ -34,12 +34,7 @@
             this.pOSeidonDataSet1 = new POSeidon.POSeidonDataSet();
             this.tabPanel = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.dgvSales = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InventoryTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblSale = new System.Windows.Forms.Label();
             this.lblMake = new System.Windows.Forms.Label();
             this.btnSale = new System.Windows.Forms.Button();
@@ -76,6 +71,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.InventoryTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,12 +79,14 @@
             this.customerTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.poSeidonDataSet2 = new POSeidon.POSeidonDataSet();
+            this.inventoryTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryTableTableAdapter = new POSeidon.POSeidonDataSetTableAdapters.InventoryTableTableAdapter();
+            this.salesHistoryTableAdapter1 = new POSeidon.POSeidonDataSetTableAdapters.SalesHistoryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.customerTableBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pOSeidonDataSet1)).BeginInit();
             this.tabPanel.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InventoryTableBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesHistoryBindingSource)).BeginInit();
@@ -98,9 +96,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryTableBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poSeidonDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryTableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // customerTableBindingSource1
@@ -134,7 +134,6 @@
             // 
             this.tabPage5.BackgroundImage = global::POSeidon.Properties.Resources.water2;
             this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage5.Controls.Add(this.btnSearch);
             this.tabPage5.Controls.Add(this.dgvSales);
             this.tabPage5.Controls.Add(this.lblSale);
             this.tabPage5.Controls.Add(this.lblMake);
@@ -149,47 +148,15 @@
             this.tabPage5.ToolTipText = "Make A Sale";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSearch.Location = new System.Drawing.Point(554, 128);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(96, 26);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // dgvSales
             // 
-            this.dgvSales.AutoGenerateColumns = false;
             this.dgvSales.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column3,
-            this.Column2});
-            this.dgvSales.DataSource = this.InventoryTableBindingSource;
-            this.dgvSales.Location = new System.Drawing.Point(90, 171);
+            this.dgvSales.Location = new System.Drawing.Point(119, 185);
             this.dgvSales.Name = "dgvSales";
-            this.dgvSales.Size = new System.Drawing.Size(349, 183);
+            this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSales.Size = new System.Drawing.Size(447, 183);
             this.dgvSales.TabIndex = 6;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item";
-            this.Column1.Name = "Column1";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Quantity";
-            this.Column3.Name = "Column3";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Price";
-            this.Column2.Name = "Column2";
             // 
             // lblSale
             // 
@@ -229,11 +196,11 @@
             // txtSales
             // 
             this.txtSales.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSales.Location = new System.Drawing.Point(90, 128);
+            this.txtSales.Location = new System.Drawing.Point(119, 129);
             this.txtSales.Name = "txtSales";
             this.txtSales.Size = new System.Drawing.Size(447, 26);
             this.txtSales.TabIndex = 2;
-            this.txtSales.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSales_KeyPress);
+            this.txtSales.TextChanged += new System.EventHandler(this.txtSales_TextChanged);
             // 
             // tabPage1
             // 
@@ -246,7 +213,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(777, 538);
+            this.tabPage1.Size = new System.Drawing.Size(777, 539);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sales History";
             this.tabPage1.ToolTipText = "Previous Sales";
@@ -263,6 +230,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblHistory
             // 
@@ -312,7 +280,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(777, 538);
+            this.tabPage2.Size = new System.Drawing.Size(777, 539);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Employee List";
             this.tabPage2.ToolTipText = "List of Employees";
@@ -349,7 +317,6 @@
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.Size = new System.Drawing.Size(672, 357);
             this.dgvEmployee.TabIndex = 2;
-            this.dgvEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellContentClick);
             // 
             // btnNewEmployee
             // 
@@ -376,7 +343,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(777, 538);
+            this.tabPage3.Size = new System.Drawing.Size(777, 539);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Inventory List";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -453,7 +420,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(777, 538);
+            this.tabPage4.Size = new System.Drawing.Size(777, 539);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Customer List";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -646,6 +613,19 @@
             this.poSeidonDataSet2.DataSetName = "POSeidonDataSet";
             this.poSeidonDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // inventoryTableBindingSource1
+            // 
+            this.inventoryTableBindingSource1.DataMember = "InventoryTable";
+            this.inventoryTableBindingSource1.DataSource = this.pOSeidonDataSet1;
+            // 
+            // inventoryTableTableAdapter
+            // 
+            this.inventoryTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // salesHistoryTableAdapter1
+            // 
+            this.salesHistoryTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,7 +644,6 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InventoryTableBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesHistory)).EndInit();
@@ -678,10 +657,12 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryTableBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poSeidonDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryTableBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -755,11 +736,10 @@
         private System.Windows.Forms.Label lblInventory;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private POSeidonDataSet poSeidonDataSet2;
+        private System.Windows.Forms.BindingSource inventoryTableBindingSource1;
+        private POSeidonDataSetTableAdapters.InventoryTableTableAdapter inventoryTableTableAdapter;
         private System.Windows.Forms.DataGridView dgvSales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button btnSearch;
+        private POSeidonDataSetTableAdapters.SalesHistoryTableAdapter salesHistoryTableAdapter1;
     }
 }
 

@@ -168,11 +168,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\water2.jpg" />
+    <None Include="Resources\posiedonorange2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="POSeidon.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\water2.jpg" />
-    <None Include="Resources\posiedonorange2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,7 +18,8 @@ namespace POSeidon
         //Employee EmpList = new Employee();
         List<Employee> myEmpList = new List<Employee>();
         Customer myCustomer = new Customer();
-
+        DataTable dataTable;
+        private bool btnSaleClicked = false;
         public frmPOS()
         {
             frmLog frmlogin = new frmLog();
@@ -131,9 +132,9 @@ namespace POSeidon
                 command.CommandText = query;
 
                 OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
-                DataTable dataTable = new DataTable();
-                oleDbDataAdapter.Fill(dataTable);
-                dgvSalesHistory.DataSource = dataTable;
+                DataTable dataTableS = new DataTable();
+                oleDbDataAdapter.Fill(dataTableS);
+                dgvSalesHistory.DataSource = dataTableS;
                
                 connection.Close();
             }
@@ -160,13 +161,95 @@ namespace POSeidon
             catch (Exception) { }
         }
 
-        private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {/*
-            if(e.RowIndex >= 0)
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            frmNewCustomer customer = new frmNewCustomer();
+            customer.Show();
+            
+        }
+
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            frmInventory item = new frmInventory();
+            item.Show();
+        }
+
+        private void btnReloadInventory_Click(object sender, EventArgs e)
+        {
+            loadInventory();
+        }
+
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            string tempSKU = string.Empty;
+            string tempItem, tempQuant, tempPrice = "";
+
+            DataView dv = new DataView(dataTable);
+            dv.RowFilter = string.Format("Item LIKE '%{0}%'", txtSales.Text); //OR SKU LIKE '%{0}%'
+
+            tempSKU = dgvSales.SelectedRows[0].Cells[0].Value.ToString();
+            tempItem = dgvSales.SelectedRows[0].Cells[1].Value.ToString();
+            tempQuant = dgvSales.SelectedRows[0].Cells[2].Value.ToString();
+            tempPrice = dgvSales.SelectedRows[0].Cells[3].Value.ToString();
+            int quantity = Int32.Parse(tempQuant);
+           
+         
+
+            try {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+               
+                string cmdTxt = "INSERT INTO SalesHistory (Item, Price, SKU, Quantity) VALUES (@Item, @Price, @SKU, @Quantity) ";
+                command.CommandText = cmdTxt;
+
+                command.Parameters.Add("@Item", OleDbType.VarChar, 15).Value = tempItem;
+                command.Parameters.Add("@Price", OleDbType.Decimal, 1000).Value = Double.Parse(tempPrice);
+                command.Parameters.Add("@SKU", OleDbType.VarChar, 6).Value = tempSKU;
+                command.Parameters.Add("@Quantity", OleDbType.Integer, 32).Value = tempQuant;
+
+                command.ExecuteNonQuery();
+
+                /*string cmdTxt2 = "UPDATE Quantity in InvetoryTable WHERE Item = tempItem VALUES (@Quantity -1)";
+                command.CommandText = cmdTxt2;
+                command.ExecuteNonQuery(); */
+
+                connection.Close();
+            }
+           catch(Exception ex) { }
+        }
+
+        private void txtSales_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = new DataView(dataTable);
+            dv.RowFilter = string.Format("Item LIKE '%{0}%'", txtSales.Text); //OR SKU LIKE '%{0}%'
+            dgvSales.DataSource = dv;
+        }
+
+        private void frmPOS_Load(object sender, EventArgs e)
+        {
+            
+            try
             {
-                DataGridViewRow row = dgvEmployee.Rows[e.RowIndex];
-            }*/
-        } //this is eventually for changes in the datagridview 
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                string query = "SELECT SKU, Item, Quantity, Price from InventoryTable";
+                command.CommandText = query;
+
+                OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
+                dataTable = new DataTable();
+                oleDbDataAdapter.Fill(dataTable);
+                dgvSales.DataSource = dataTable;
+
+                connection.Close();
+
+            }
+
+            catch (Exception ex) { }
+        }
 
         private void btnRemoveCustomer_Click(object sender, EventArgs e)
         {/* This ended up deleting everything from the customer table :(
@@ -202,84 +285,9 @@ namespace POSeidon
         }*/
         }
 
-        private void btnNewCustomer_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            frmNewCustomer customer = new frmNewCustomer();
-            customer.Show();
-            
-        }
-
-
-        private void btnAddItem_Click(object sender, EventArgs e)
-        {
-            frmInventory item = new frmInventory();
-            item.Show();
-        }
-
-        private void btnReloadInventory_Click(object sender, EventArgs e)
-        {
-            loadInventory();
-        }
-
-
-        private void btnSale_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string searchText = txtSales.Text.ToString();
-
-            if (searchText != String.Empty)
-            {
-                try
-                {
-                    connection.Open();
-
-                    OleDbCommand command = new OleDbCommand();
-                    command.Connection = connection;
-
-                    command.CommandText = @"SELECT Item FROM InventoryTable WHERE SKU LIKE '@searchText%' OR Item LIKE '@searchText%'";
-                    command.Parameters.Add("@searchText", OleDbType.VarChar, 50).Value = searchText;
-
-                    command.ExecuteNonQuery();
-
-                    dgvSales.DataSource = inventoryTableTableAdapter1;
-
-                    connection.Close();
-                }
-
-                catch (Exception) { }
-            }
-        }
-
-        private void txtSales_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-
-        private void frmPOS_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = connection;
-                string query = "Select * from InventoryTable";
-                command.CommandText = query;
-
-                OleDbDataAdapter odbAdapter = new OleDbDataAdapter(command);
-                DataTable dataTable = new DataTable();
-                odbAdapter.Fill(dataTable);
-                dgvSales.DataSource = dataTable;
-
-                connection.Close();
-                
-            }
-
-            catch (Exception ex) { }
+            this.Close();
         }
     }
 }

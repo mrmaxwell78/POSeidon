@@ -192,9 +192,6 @@ namespace POSeidon
             tempItem = dgvSales.SelectedRows[0].Cells[1].Value.ToString();
             tempQuant = dgvSales.SelectedRows[0].Cells[2].Value.ToString();
             tempPrice = dgvSales.SelectedRows[0].Cells[3].Value.ToString();
-            int quantity = Int32.Parse(tempQuant);
-           
-         
 
             try {
                 connection.Open();
@@ -211,9 +208,9 @@ namespace POSeidon
 
                 command.ExecuteNonQuery();
 
-                /*string cmdTxt2 = "UPDATE Quantity in InvetoryTable WHERE Item = tempItem VALUES (@Quantity -1)";
+                /*string cmdTxt2 = "UPDATE Quantity SET Quantity = Quantity -1, WHERE Item = tempItem";  This causes everything to break
                 command.CommandText = cmdTxt2;
-                command.ExecuteNonQuery(); */
+                command.ExecuteNonQuery();*/
 
                 connection.Close();
             }

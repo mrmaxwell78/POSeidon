@@ -19,7 +19,6 @@ namespace POSeidon
         List<Employee> myEmpList = new List<Employee>();
         Customer myCustomer = new Customer();
         DataTable dataTable;
-        private bool btnSaleClicked = false;
         public frmPOS()
         {
             frmLog frmlogin = new frmLog();
@@ -126,16 +125,16 @@ namespace POSeidon
             try
             {
                 connection.Open();
-                OleDbCommand command = new OleDbCommand();
-                command.Connection = connection;
-                string query = "Select * from SalesHistory";
-                command.CommandText = query;
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = connection;
+                string query = "SELECT * from SalesHistory";
 
-                OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(command);
-                DataTable dataTableS = new DataTable();
-                oleDbDataAdapter.Fill(dataTableS);
-                dgvSalesHistory.DataSource = dataTableS;
-               
+                cmd.CommandText = query;
+                OleDbDataAdapter olda = new OleDbDataAdapter(cmd);
+                DataTable sales = new DataTable();
+                olda.Fill(sales);
+                dgvSalesHistory.DataSource = sales;
+
                 connection.Close();
             }
             catch (Exception) { }
@@ -249,40 +248,6 @@ namespace POSeidon
             }
 
             catch (Exception ex) { }
-        }
-
-        private void btnRemoveCustomer_Click(object sender, EventArgs e)
-        {/* This ended up deleting everything from the customer table :(
-            connection.Open();
-            OleDbCommand command = new OleDbCommand();
-            for (int i = 0; i < dgvCustomer.Rows.Count; i++)
-            {
-                DataGridViewRow delrow = dgvCustomer.Rows[i];
-                if(delrow.Selected == true)
-                {
-                    dgvCustomer.Rows.RemoveAt(i);
-                }
-                try
-                {
-                    command.Connection = connection;
-                    command.CommandText = "DELETE FROM CustomerTable WHERE ID=" + i + "";
-                   
-                    command.ExecuteNonQuery();
-                    
-                }
-                catch(Exception expt) { }
-            }
-
-            foreach(DataGridViewRow row in dgvCustomer.Rows)
-            {
-                if (row.Selected)
-                {
-                    dgvCustomer.Rows.RemoveAt(row.Index);
-                    break;
-                }
-            }
-            connection.Close();
-        }*/
         }
 
         private void btnClose_Click(object sender, EventArgs e)

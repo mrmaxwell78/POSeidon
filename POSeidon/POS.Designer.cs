@@ -64,13 +64,6 @@
             this.btnRemoveCustomer = new System.Windows.Forms.Button();
             this.btnLoyalty = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.InventoryTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,8 +98,7 @@
             // 
             // customerTableBindingSource1
             // 
-            this.customerTableBindingSource1.DataMember = "CustomerTable";
-            this.customerTableBindingSource1.DataSource = this.pOSeidonDataSet1;
+            this.customerTableBindingSource1.DataSource = this.salesHistoryBindingSource;
             // 
             // pOSeidonDataSet1
             // 
@@ -150,6 +142,7 @@
             // 
             // dgvSales
             // 
+            this.dgvSales.AllowUserToResizeRows = false;
             this.dgvSales.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSales.Location = new System.Drawing.Point(119, 185);
@@ -256,13 +249,11 @@
             // 
             // dgvSalesHistory
             // 
-            this.dgvSalesHistory.AutoGenerateColumns = false;
             this.dgvSalesHistory.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSalesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSalesHistory.DataSource = this.salesHistoryBindingSource;
-            this.dgvSalesHistory.Location = new System.Drawing.Point(26, 80);
+            this.dgvSalesHistory.Location = new System.Drawing.Point(103, 87);
             this.dgvSalesHistory.Name = "dgvSalesHistory";
-            this.dgvSalesHistory.Size = new System.Drawing.Size(729, 369);
+            this.dgvSalesHistory.Size = new System.Drawing.Size(576, 349);
             this.dgvSalesHistory.TabIndex = 0;
             // 
             // salesHistoryBindingSource
@@ -484,7 +475,6 @@
             this.btnRemoveCustomer.TabIndex = 2;
             this.btnRemoveCustomer.Text = "Remove Customer";
             this.btnRemoveCustomer.UseVisualStyleBackColor = false;
-            this.btnRemoveCustomer.Click += new System.EventHandler(this.btnRemoveCustomer_Click);
             // 
             // btnLoyalty
             // 
@@ -505,62 +495,12 @@
             this.dgvCustomer.AutoGenerateColumns = false;
             this.dgvCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn1});
             this.dgvCustomer.DataSource = this.customerTableBindingSource1;
             this.dgvCustomer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(116)))), ((int)(((byte)(145)))));
             this.dgvCustomer.Location = new System.Drawing.Point(26, 71);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(727, 374);
             this.dgvCustomer.TabIndex = 0;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "First_Name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "First_Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Last_Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Last_Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Address";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Phone";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Phone";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Loyalty";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Loyalty";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // menuStrip1
             // 
@@ -713,13 +653,6 @@
         private POSeidonDataSetTableAdapters.InventoryTableTableAdapter inventoryTableTableAdapter1;
         private System.Windows.Forms.TextBox txtSales;
         private System.Windows.Forms.Button btnSale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.BindingSource customerTableBindingSource1;
         private POSeidonDataSet pOSeidonDataSet1;
         private POSeidonDataSetTableAdapters.CustomerTableTableAdapter customerTableTableAdapter2;
